@@ -41,4 +41,4 @@ logs/
 .vscode/
 .idea/
 scBERT/scBERT/
-scGPT/
+*.faiss
