@@ -48,6 +48,8 @@ CELL_TYPE_KEY = "Celltype"
 GENE_COL = "index"
 K_CUSTOM = 10   # 커스텀 레퍼런스 이웃 수
 K_ATLAS  = 50   # CellXGene 아틀라스 이웃 수
+SAVE_DIR = Path("./results/reference_mapping")
+SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 
 # ──────────────────────────────────────────────
@@ -167,6 +169,16 @@ def run_custom_reference_mapping():
     acc = sklearn.metrics.accuracy_score(gt, preds)
     print(f"Accuracy: {acc:.4f}")
 
+    # 결과 저장
+    test_embed.obs["pred_celltype"] = preds
+    test_embed.write_h5ad(SAVE_DIR / "mode1_test_embed.h5ad")
+    np.save(SAVE_DIR / "mode1_predictions.npy", np.array(preds))
+    np.save(SAVE_DIR / "mode1_groundtruth.npy", gt)
+    sc.pl.umap(test_embed, color=[CELL_TYPE_KEY, "pred_celltype"],
+               frameon=False, wspace=0.4,
+               save=str(SAVE_DIR / "mode1_umap.png"))
+    print(f"결과 저장 완료: {SAVE_DIR}")
+
     return test_embed, gt  # Mode 2에서 재사용 가능
 
 
@@ -208,6 +220,11 @@ def run_cellxgene_atlas_mapping(
         print(f"\nEndothelial 세포 {len(ids_m)}개 발견")
         print(f"  예측: {voting[ids_m]}")
         print(f"  정답: {gt[ids_m]}")
+
+    # 결과 저장
+    np.save(SAVE_DIR / "mode2_predictions.npy", voting)
+    np.save(SAVE_DIR / "mode2_groundtruth.npy", gt)
+    print(f"결과 저장 완료: {SAVE_DIR}")
 
     return voting
 
