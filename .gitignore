@@ -1,0 +1,42 @@
+# Data files (large)
+data/
+*.h5
+*.h5ad
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# CSV/TSV (potentially large)
+*.csv
+*.tsv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Virtual environments
+venv/
+env/
+.env
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
