@@ -1,0 +1,1 @@
+{"embedding_dir": "/scratch/hdd001/home/haotian/cellxgene_cencus_embed/", "meta_dir": null, "recursive": true, "embedding_file_suffix": ".h5ad", "meta_file_suffix": null, "embedding_key": null, "meta_key": "cell_type", "gpu": true, "num_workers": 1, "index_desc": "PCA64,IVF16384_HNSW32,PQ16", "num_embeddings": 35096827, "num_features": 512, "nprobe": 128}
