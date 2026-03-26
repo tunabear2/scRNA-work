@@ -133,7 +133,7 @@ hyperparameter_defaults = dict(
     do_train=True,
     load_model="./data/pretrain",
     mask_ratio=0.0,
-    epochs=10,
+    epochs=20,
     n_bins=51,
     MVC=False,
     ecs_thres=0.0,
@@ -893,10 +893,9 @@ adata_test_raw.obs["predictions"] = [id2type[p] for p in predictions]
 palette_ = plt.rcParams["axes.prop_cycle"].by_key()["color"] * 3
 palette_ = {c: palette_[i] for i, c in enumerate(celltypes)}
 
-with plt.rc_context({"figure.figsize": (14, 5), "figure.dpi": 300}):
-    sc.pl.umap(adata_test_raw, color=["celltype", "predictions"], palette=palette_, show=False, wspace=0.6, legend_loc="right margin")
-    plt.tight_layout()
-    plt.savefig(save_dir / "results.png", dpi=300, bbox_inches="tight")
+with plt.rc_context({"figure.figsize": (6, 4), "figure.dpi": 300}):
+    sc.pl.umap(adata_test_raw, color=["celltype", "predictions"], palette=palette_, show=False)
+    plt.savefig(save_dir / "results.png", dpi=300)
 
 # 결과 저장
 save_dict = {"predictions": predictions, "labels": labels, "results": results, "id_maps": id2type}

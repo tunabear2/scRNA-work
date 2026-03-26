@@ -27,7 +27,7 @@ import sklearn.metrics
 import scanpy as sc
 from tqdm import tqdm
 
-sys.path.insert(0, ".")
+sys.path.insert(0, "../")
 import scgpt as scg
 
 warnings.filterwarnings("ignore", category=ResourceWarning)
@@ -43,7 +43,7 @@ except ImportError:
 # ──────────────────────────────────────────────
 # 공통 설정
 # ──────────────────────────────────────────────
-MODEL_DIR = Path("./data/pretrain")
+MODEL_DIR = Path("../save/scGPT_human")
 CELL_TYPE_KEY = "Celltype"
 GENE_COL = "index"
 K_CUSTOM = 10   # 커스텀 레퍼런스 이웃 수
@@ -130,7 +130,7 @@ def run_custom_reference_mapping():
     print("\n=== Mode 1: 커스텀 레퍼런스 매핑 ===")
 
     # 레퍼런스 임베딩
-    ref_adata = sc.read_h5ad("./data/demo_train.h5ad")
+    ref_adata = sc.read_h5ad("../data/annotation_pancreas/demo_train.h5ad")
     ref_embed = scg.tasks.embed_data(
         ref_adata, MODEL_DIR,
         gene_col=GENE_COL,
@@ -145,7 +145,7 @@ def run_custom_reference_mapping():
     sc.pl.umap(ref_embed, color=CELL_TYPE_KEY, frameon=False, wspace=0.4)
 
     # 쿼리 임베딩
-    test_adata = sc.read_h5ad("./data/demo_test.h5ad")
+    test_adata = sc.read_h5ad("../data/annotation_pancreas/demo_test.h5ad")
     test_embed = scg.tasks.embed_data(
         test_adata, MODEL_DIR,
         gene_col=GENE_COL,
@@ -220,7 +220,7 @@ if __name__ == "__main__":
     test_embed, gt = run_custom_reference_mapping()
 
     # Mode 2 실행 (faiss 설치 + 인덱스 다운로드 후 index_dir 경로 입력)
-    INDEX_DIR = "."  # index.faiss, index_config.json, meta.h5ad가 루트에 위치
+    INDEX_DIR = "path_to_faiss_index_folder"  # ← 실제 경로로 변경
     run_cellxgene_atlas_mapping(
         index_dir=INDEX_DIR,
         test_embed_X=test_embed.X,
