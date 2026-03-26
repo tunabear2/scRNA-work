@@ -40,3 +40,5 @@ logs/
 # IDE
 .vscode/
 .idea/
+scBERT/scBERT/
+scGPT/
