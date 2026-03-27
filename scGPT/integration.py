@@ -144,7 +144,7 @@ hyperparameter_defaults = dict(
     seed=42,
     dataset_name="PBMC_10K",
     do_train=True,
-    load_model="../save/scGPT_human",
+    load_model="./data/pretrain",
     GEPC=True,          # Gene expression modelling for cell objective
     ecs_thres=0.8,      # Elastic cell similarity (0.0 = 비활성화)
     dab_weight=1.0,     # DAR objective weight for batch correction
@@ -527,8 +527,7 @@ optimizer = torch.optim.Adam(
 scheduler = torch.optim.lr_scheduler.StepLR(
     optimizer, step_size=1, gamma=config.schedule_ratio
 )
-# [수정] torch.cuda.amp → torch.amp (PyTorch 1.13+ 권장)
-scaler = torch.amp.GradScaler("cuda", enabled=config.amp)
+scaler = torch.cuda.amp.GradScaler(enabled=config.amp)
 
 
 def train(model: nn.Module, loader: DataLoader) -> None:
@@ -546,8 +545,7 @@ def train(model: nn.Module, loader: DataLoader) -> None:
 
         src_key_padding_mask = input_gene_ids.eq(vocab[pad_token])
 
-        # [수정] torch.cuda.amp.autocast → torch.amp.autocast
-        with torch.amp.autocast("cuda", enabled=config.amp):
+        with torch.cuda.amp.autocast(enabled=config.amp):
             output_dict = model(
                 input_gene_ids,
                 input_values,
@@ -667,7 +665,7 @@ def evaluate(model: nn.Module, loader: DataLoader) -> Tuple[float, float]:
 
             src_key_padding_mask = input_gene_ids.eq(vocab[pad_token])
 
-            with torch.amp.autocast("cuda", enabled=config.amp):
+            with torch.cuda.amp.autocast(enabled=config.amp):
                 output_dict = model(
                     input_gene_ids,
                     input_values,
@@ -739,7 +737,7 @@ def eval_testdata(
         all_values = tokenized_all["values"]
         src_key_padding_mask = all_gene_ids.eq(vocab[pad_token])
 
-        with torch.no_grad(), torch.amp.autocast("cuda", enabled=config.amp):
+        with torch.no_grad(), torch.cuda.amp.autocast(enabled=config.amp):
             cell_embeddings = model.encode_batch(
                 all_gene_ids,
                 all_values.float(),
