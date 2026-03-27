@@ -73,7 +73,7 @@ MVC = False  # Masked value prediction for cell embedding
 ECS = False  # Elastic cell similarity
 
 # 사전학습 모델 경로
-load_model = "../save/scGPT_human"
+load_model = "./data/pretrain"
 load_param_prefixs = [
     "encoder",
     "value_encoder",
@@ -213,11 +213,13 @@ if load_model is not None:
     pretrained_dict = torch.load(model_file, map_location=device)
 
     if load_param_prefixs is not None:
-        # 지정된 prefix로 시작하는 파라미터만 로드
+        # 지정된 prefix로 시작하고 model_dict에 존재하며 shape이 일치하는 파라미터만 로드
         pretrained_dict = {
             k: v
             for k, v in pretrained_dict.items()
             if any(k.startswith(prefix) for prefix in load_param_prefixs)
+            and k in model_dict
+            and v.shape == model_dict[k].shape
         }
         for k, v in pretrained_dict.items():
             logger.info(f"Loading param: {k} | shape: {v.shape}")
@@ -251,8 +253,7 @@ criterion_cls = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, schedule_interval, gamma=0.9)
 
-# [수정] torch.cuda.amp → torch.amp (PyTorch 1.13+ 권장 방식)
-scaler = torch.amp.GradScaler("cuda", enabled=amp)
+scaler = torch.cuda.amp.GradScaler(enabled=amp)
 
 
 def train(model: nn.Module, train_loader: torch.utils.data.DataLoader) -> None:
@@ -294,8 +295,7 @@ def train(model: nn.Module, train_loader: torch.utils.data.DataLoader) -> None:
                 input_values, dtype=torch.bool, device=device
             )
 
-        # [수정] torch.cuda.amp.autocast → torch.amp.autocast
-        with torch.amp.autocast("cuda", enabled=amp):
+        with torch.cuda.amp.autocast(enabled=amp):
             output_dict = model(
                 mapped_input_gene_ids,
                 input_values,
