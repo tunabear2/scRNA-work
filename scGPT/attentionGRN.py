@@ -88,6 +88,9 @@ from scgpt.preprocess import Preprocessor
 os.environ["KMP_WARNINGS"] = "off"
 warnings.filterwarnings('ignore')
 
+OUTPUT_DIR = Path("./results/attentionGRN")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
 # --- Cell 2 ---
 set_seed(42)
 pad_token = "<pad>"
@@ -420,9 +423,11 @@ if setting == 'difference':
         scores = dict_sum_condition_mean[i][gene_idx, :][:, gene_idx]-dict_sum_condition_mean['ctrl'][gene_idx, :][:, gene_idx]
         df_scores = pd.DataFrame(data = scores, columns = example_genes, index = example_genes)
         plt.figure(figsize=(6, 6), dpi=300)
-        ax = sns.clustermap(df_scores, annot=False, cmap=sns.diverging_palette(145, 300, s=60, as_cmap=True), fmt='.2f', vmin=-0.3, vmax=0.3) 
-        plt.show()
+        ax = sns.clustermap(df_scores, annot=False, cmap=sns.diverging_palette(145, 300, s=60, as_cmap=True), fmt='.2f', vmin=-0.3, vmax=0.3)
+        out_path = OUTPUT_DIR / f"clustermap_{i.replace('+', '_')}.png"
+        ax.savefig(out_path, dpi=150, bbox_inches="tight")
         plt.close()
+        print(f"클러스터맵 저장: {out_path}")
 
 # --- Cell 23 ---
 # Specify top k number of genes to be selected, and the selection setting
@@ -522,7 +527,10 @@ ax = plt.gca()
 ax.margins(0.08)
 plt.axis("off")
 plt.tight_layout()
-plt.show()
+out_path = OUTPUT_DIR / f"gene_network_{TF_name}.png"
+plt.savefig(out_path, dpi=150, bbox_inches="tight")
+plt.close()
+print(f"유전자 네트워크 저장: {out_path}")
 
 
 # ======================================================================
@@ -567,7 +575,11 @@ except Exception as e:
     print("Skipping Reactome pathway validation. Core GRN results are unaffected.")
 
 # --- Cell 32 ---
-len(df_attn)
+print(f"경로 분석 결과 수: {len(df_attn)}")
 
 # --- Cell 33 ---
-df_attn
+if not df_attn.empty:
+    out_path = OUTPUT_DIR / f"pathway_enrichment_{TF_name}.csv"
+    df_attn.to_csv(out_path, index=False)
+    print(f"경로 분석 결과 저장: {out_path}")
+print(df_attn)
