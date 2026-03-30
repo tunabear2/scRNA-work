@@ -244,7 +244,7 @@ DAB_separate_optim = True if DAB > 1 else False
 
 # ── 저장 디렉토리 ────────────────────────────────────────────────────
 dataset_name = config.dataset_name
-save_dir = Path(f"./save/dev_{dataset_name}-{time.strftime('%b%d-%H-%M')}/")
+save_dir = Path(f"./results/annotation/dev_{dataset_name}-{time.strftime('%b%d-%H-%M')}/")
 save_dir.mkdir(parents=True, exist_ok=True)
 print(f"save to {save_dir}")
 

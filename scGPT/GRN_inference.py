@@ -54,7 +54,7 @@ warnings.filterwarnings("ignore")
 # ──────────────────────────────────────────────
 MODEL_DIR   = Path("./data/pretrain_bc")     # 모델 경로
 DATA_PATH   = Path("./data/Immune_ALL_human.h5ad")   # 데이터 경로
-OUTPUT_DIR  = Path("./output")              # 결과 저장 경로
+OUTPUT_DIR  = Path("./results/GRN_inference")  # 결과 저장 경로
 
 PAD_TOKEN   = "<pad>"
 SPECIAL_TOKENS = [PAD_TOKEN, "<cls>", "<eoc>"]

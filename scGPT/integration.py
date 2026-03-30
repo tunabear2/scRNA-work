@@ -204,7 +204,7 @@ explicit_zero_prob = True  # 제로값에 베르누이 분포 명시적 적용
 # ======================================================================
 
 dataset_name = config.dataset_name
-save_dir = Path(f"./save/dev_{dataset_name}-{time.strftime('%b%d-%H-%M')}/")
+save_dir = Path(f"./results/integration/dev_{dataset_name}-{time.strftime('%b%d-%H-%M')}/")
 save_dir.mkdir(parents=True, exist_ok=True)
 print(f"Saving to {save_dir}")
 

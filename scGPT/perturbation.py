@@ -117,7 +117,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # 2. 저장 경로 및 로거 초기화
 # ======================================================================
 
-save_dir = Path(f"./save/dev_perturb_{data_name}-{time.strftime('%b%d-%H-%M')}/")
+save_dir = Path(f"./results/perturbation/dev_perturb_{data_name}-{time.strftime('%b%d-%H-%M')}/")
 save_dir.mkdir(parents=True, exist_ok=True)
 print(f"Saving to {save_dir}")
 

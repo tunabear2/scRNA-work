@@ -463,7 +463,7 @@ def main():
     special_tokens = [config.pad_token, "<cls>", "<eoc>"]
 
     # ── 저장 디렉토리 및 로거 ──
-    save_dir = Path(f"./save/dev_{config.dataset_name}-{time.strftime('%b%d-%H-%M')}/")
+    save_dir = Path(f"./results/multiomics_finetune/dev_{config.dataset_name}-{time.strftime('%b%d-%H-%M')}/")
     save_dir.mkdir(parents=True, exist_ok=True)
     logger = scg.logger
     scg.utils.add_file_handler(logger, save_dir / "run.log")
