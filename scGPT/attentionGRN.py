@@ -114,7 +114,7 @@ n_input_bins = n_bins
 
 # --- Cell 3 ---
 # Specify model path; here we load the scGPT blood model fine-tuned on adamson
-model_dir = Path("../save/finetuned_scGPT_adamson")
+model_dir = Path("./data/finetuned_scGPT_adamson")
 model_config_file = model_dir / "args.json"
 model_file = model_dir / "best_model.pt"
 vocab_file = model_dir / "vocab.json"
@@ -181,7 +181,7 @@ model.to(device)
 # ======================================================================
 
 # --- Cell 5 ---
-data_dir = Path("../data")
+data_dir = Path("./data")
 pert_data = PertData(data_dir)
 pert_data.load(data_name="adamson")
 adata = sc.read(data_dir / "adamson/perturb_processed.h5ad")
@@ -305,16 +305,17 @@ with torch.no_grad(), torch.cuda.amp.autocast(enabled=True):
         src_embs = model.encoder(torch.tensor(all_gene_ids[i : i + batch_size], dtype=torch.long).to(device))
         val_embs = model.value_encoder(torch.tensor(all_values[i : i + batch_size], dtype=torch.float).to(device))
         total_embs = src_embs + val_embs
-        total_embs = model.bn(total_embs.permute(0, 2, 1)).permute(0, 2, 1)
+        if getattr(model, 'bn', None) is not None:
+            total_embs = model.bn(total_embs.permute(0, 2, 1)).permute(0, 2, 1)
         # Send total_embs to attention layers for attention operations
         # Retrieve the output from second to last layer
         for layer in model.transformer_encoder.layers[:num_attn_layers]:
             total_embs = layer(total_embs, src_key_padding_mask=src_key_padding_mask[i : i + batch_size].to(device))
-        # Send total_embs to the last layer in flash-attn
-        # https://github.com/HazyResearch/flash-attention/blob/1b18f1b7a133c20904c096b8b222a0916e1b3d37/flash_attn/flash_attention.py#L90
-        qkv = model.transformer_encoder.layers[num_attn_layers].self_attn.Wqkv(total_embs)
-        # Retrieve q, k, and v from flast-attn wrapper
-        qkv = rearrange(qkv, 'b s (three h d) -> b s three h d', three=3, h=8)
+        # Extract q, k, v from standard PyTorch MultiheadAttention via in_proj_weight
+        attn_layer = model.transformer_encoder.layers[num_attn_layers].self_attn
+        import torch.nn.functional as F
+        qkv = F.linear(total_embs, attn_layer.in_proj_weight, attn_layer.in_proj_bias)
+        qkv = rearrange(qkv, 'b s (three h d) -> b s three h d', three=3, h=nhead)
         q = qkv[:, :, 0, :, :]
         k = qkv[:, :, 1, :, :]
         v = qkv[:, :, 2, :, :]
@@ -449,7 +450,7 @@ print(attn_top_gene_dict_100[TF_name + '+ctrl'])
 # ======================================================================
 
 # --- Cell 24 ---
-df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\t')
+df = pd.read_csv('./data/reference/BHLHE40.10.tsv', delimiter='\t')
 
 
 # ======================================================================
@@ -551,15 +552,19 @@ gene_list = attn_top_gene_dict_100[TF_name + '+ctrl']
 
 # --- Cell 31 ---
 df_attn = pd.DataFrame()
-enr_Reactome = gp.enrichr(gene_list=gene_list,
-                           gene_sets=databases,
-                           organism='Human', 
-                           outdir='test',
-                           cutoff=0.5)
-out = enr_Reactome.results
-out['Gene List'] = str(gene_list)
-out = out[out['P-value'] < p_thresh]
-df_attn = df_attn.append(out, ignore_index=True)
+try:
+    enr_Reactome = gp.enrichr(gene_list=gene_list,
+                               gene_sets=databases,
+                               organism='human',
+                               outdir='test',
+                               cutoff=0.5)
+    out = enr_Reactome.results
+    out['Gene List'] = str(gene_list)
+    out = out[out['P-value'] < p_thresh]
+    df_attn = df_attn.append(out, ignore_index=True)
+except Exception as e:
+    print(f"[WARNING] Enrichr API call failed (network issue): {e}")
+    print("Skipping Reactome pathway validation. Core GRN results are unaffected.")
 
 # --- Cell 32 ---
 len(df_attn)

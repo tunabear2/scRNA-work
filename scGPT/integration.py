@@ -34,6 +34,13 @@ import matplotlib
 matplotlib.use("Agg")  # 헤드리스 환경용 non-interactive 백엔드
 import matplotlib.pyplot as plt
 import numpy as np
+# scvi-tools 구버전의 deprecated numpy 별칭 호환성 패치 (NumPy 1.24에서 제거됨)
+np.str = str
+np.bool = bool
+np.int = int
+np.float = float
+np.complex = complex
+np.object = object
 import scanpy as sc
 import scvi
 import torch
@@ -70,6 +77,7 @@ warnings.filterwarnings("ignore")
 # wandb 심(Shim): 로컬 실행 시 W&B 없이도 동작하도록 대체 구현
 # 실제 W&B 추적이 필요하다면 `pip install wandb` 후 로그인하면 자동으로 실제 wandb 사용
 # ======================================================================
+
 
 class _WandbShim:
     """W&B 미설치 / 미로그인 환경을 위한 최소 호환 shim."""
