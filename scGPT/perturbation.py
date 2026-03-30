@@ -73,7 +73,7 @@ MVC = False  # Masked value prediction for cell embedding
 ECS = False  # Elastic cell similarity
 
 # 사전학습 모델 경로
-load_model = "./data/pretrain"
+load_model = "./data/pretrain_human"
 load_param_prefixs = [
     "encoder",
     "value_encoder",

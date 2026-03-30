@@ -43,7 +43,7 @@ except ImportError:
 # ──────────────────────────────────────────────
 # 공통 설정
 # ──────────────────────────────────────────────
-MODEL_DIR = Path("./data/pretrain")
+MODEL_DIR = Path("./data/pretrain_human")
 CELL_TYPE_KEY = "Celltype"
 GENE_COL = "index"
 K_CUSTOM = 10   # 커스텀 레퍼런스 이웃 수
