@@ -73,7 +73,7 @@ MVC = False  # Masked value prediction for cell embedding
 ECS = False  # Elastic cell similarity
 
 # 사전학습 모델 경로
-load_model = "./data/pretrain_human"
+load_model = "./data/models/pretrain_human"
 load_param_prefixs = [
     "encoder",
     "value_encoder",
@@ -130,7 +130,7 @@ logger.info(f"Running on {time.strftime('%Y-%m-%d %H:%M:%S')}")
 # 3. 데이터 로드 및 전처리
 # ======================================================================
 
-pert_data = PertData("./data")
+pert_data = PertData("./data/perturbation")
 pert_data.load(data_name=data_name)
 pert_data.prepare_split(split=split, seed=1)
 pert_data.get_dataloader(batch_size=batch_size, test_batch_size=eval_batch_size)

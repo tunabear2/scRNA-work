@@ -117,7 +117,7 @@ n_input_bins = n_bins
 
 # --- Cell 3 ---
 # Specify model path; here we load the scGPT blood model fine-tuned on adamson
-model_dir = Path("./data/finetuned_scGPT_adamson")
+model_dir = Path("./data/attentionGRN/finetuned_scGPT_adamson")
 model_config_file = model_dir / "args.json"
 model_file = model_dir / "best_model.pt"
 vocab_file = model_dir / "vocab.json"
@@ -184,7 +184,7 @@ model.to(device)
 # ======================================================================
 
 # --- Cell 5 ---
-data_dir = Path("./data")
+data_dir = Path("./data/perturbation")
 pert_data = PertData(data_dir)
 pert_data.load(data_name="adamson")
 adata = sc.read(data_dir / "adamson/perturb_processed.h5ad")
@@ -455,7 +455,7 @@ print(attn_top_gene_dict_100[TF_name + '+ctrl'])
 # ======================================================================
 
 # --- Cell 24 ---
-df = pd.read_csv('./data/reference/BHLHE40.10.tsv', delimiter='\t')
+df = pd.read_csv('./data/attentionGRN/reference/BHLHE40.10.tsv', delimiter='\t')
 
 
 # ======================================================================

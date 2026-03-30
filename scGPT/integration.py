@@ -152,7 +152,7 @@ hyperparameter_defaults = dict(
     seed=42,
     dataset_name="PBMC_10K",
     do_train=True,
-    load_model="./data/pretrain_human",
+    load_model="./data/models/pretrain_human",
     GEPC=True,          # Gene expression modelling for cell objective
     ecs_thres=0.8,      # Elastic cell similarity (0.0 = 비활성화)
     dab_weight=1.0,     # DAR objective weight for batch correction

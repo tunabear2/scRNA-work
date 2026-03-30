@@ -82,7 +82,7 @@ HYPERPARAMS = dict(
     seed                = 42,
     dataset_name        = "BMMC",
     do_train            = True,
-    load_model          = "./data/pretrain_human",  # 사전 학습 모델 경로
+    load_model          = "./data/models/pretrain_human",  # 사전 학습 모델 경로
     freeze              = False,
     GEP                 = True,    # Gene Expression Prediction
     GEPC                = True,    # Gene Expression Prediction (cell-level)
@@ -141,7 +141,7 @@ def get_config():
 # ──────────────────────────────────────────────
 def load_bmmc(config):
     """BMMC CITE-seq 데이터 로드 및 RNA/Protein 분리."""
-    adata = sc.read("./data/BMMC_processed.h5ad")
+    adata = sc.read("./data/multiomics_finetune/BMMC_processed.h5ad")
 
     # 3명 donor, 17종 세포 유형만 사용
     adata = adata[
