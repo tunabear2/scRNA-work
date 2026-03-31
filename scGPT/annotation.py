@@ -12,6 +12,7 @@ Multiple Sclerosis 데이터셋을 사용하여 사전학습된 scGPT 모델을
     3. 사전학습 모델 로드
     4. 태스크별 목적함수로 파인튜닝
     5. 평가 및 추론
+    6. annotated h5ad 저장
 
 디렉토리 구조 (실행 위치: ~/DW/scGPT/):
     ./data/annotation/       - c_data.h5ad, filtered_ms_adata.h5ad
@@ -19,6 +20,7 @@ Multiple Sclerosis 데이터셋을 사용하여 사전학습된 scGPT 모델을
     ./scgpt/                 - scGPT 패키지
 """
 
+import argparse
 import copy
 import gc
 import json
@@ -70,6 +72,70 @@ from scgpt.tokenizer.gene_tokenizer import GeneVocab
 from scgpt.preprocess import Preprocessor
 from scgpt import SubsetsBatchSampler
 from scgpt.utils import set_seed, category_str2int, eval_scib_metrics
+
+
+# ── CLI 인자 ──────────────────────────────────────────────────────────
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--output_path", type=str, default=None,
+    help="annotated h5ad 저장 경로 (기본: save_dir/annotated_output.h5ad)"
+)
+parser.add_argument(
+    "--train_data", type=str, default=None,
+    help="학습용 h5ad 파일명 (data/annotation/ 기준, 예: Zheng68K.h5ad)"
+)
+parser.add_argument(
+    "--test_data", type=str, default=None,
+    help="테스트용 h5ad 파일명 (data/annotation/ 기준, 예: panglao_10000.h5ad)"
+)
+cli_args, _ = parser.parse_known_args()
+
+
+def _detect_col(columns, keywords, label: str) -> str:
+    """컬럼 목록에서 keywords 우선순위 순으로 매칭되는 첫 컬럼을 반환한다."""
+    lower = [c.lower() for c in columns]
+    for kw in keywords:
+        for orig, lo in zip(columns, lower):
+            if kw in lo:
+                print(f"[auto-detect] {label} 컬럼: '{orig}'")
+                return orig
+    raise ValueError(
+        f"{label} 컬럼을 자동 탐지하지 못했습니다.\n"
+        f"사용 가능한 컬럼: {list(columns)}\n"
+        f"검색 키워드: {keywords}"
+    )
+
+
+def _detect_celltype_col(adata):
+    keywords = ["celltype", "cell_type", "cell type", "annotation", "label", "cluster", "leiden", "louvain"]
+    return _detect_col(adata.obs.columns, keywords, "celltype")
+
+
+def _detect_gene_col(adata):
+    keywords = ["gene_name", "gene_symbol", "gene", "feature_name", "symbol"]
+    return _detect_col(adata.var.columns, keywords, "gene")
+
+
+def _setup_gene_index(adata):
+    """유전자 식별자를 var 인덱스로 설정하고 gene_name 컬럼을 보장.
+
+    우선순위:
+      1. var 컬럼 중 유전자명 키워드 탐지 → 해당 컬럼을 인덱스로 설정
+      2. 탐지 실패 시 → 현재 인덱스 값을 유전자 식별자로 간주 (인덱스 자체가 gene symbol인 경우)
+
+    어느 경우든 var["gene_name"] 컬럼이 없으면 인덱스 값으로 채워
+    downstream 및 AnnData.concatenate에서 일관되게 사용할 수 있도록 보장한다.
+    """
+    try:
+        gene_col = _detect_gene_col(adata)
+        adata.var.set_index(adata.var[gene_col], inplace=True)
+        print(f"[gene-index] var 컬럼 '{gene_col}'을 유전자 인덱스로 사용합니다.")
+    except (ValueError, KeyError):
+        print("[gene-index] var 컬럼에서 유전자명을 탐지하지 못했습니다. var 인덱스를 유전자 식별자로 사용합니다.")
+    # gene_name 컬럼이 없으면 인덱스 값으로 채움
+    if "gene_name" not in adata.var.columns:
+        adata.var["gene_name"] = adata.var.index.tolist()
+
 
 # ── wandb shim ──────────────────────────────────────────────────────────
 # wandb가 설치되어 있지 않거나 로그인되지 않은 경우 더미 객체로 대체
@@ -133,7 +199,7 @@ hyperparameter_defaults = dict(
     do_train=True,
     load_model="./data/models/pretrain_human",
     mask_ratio=0.0,
-    epochs=20,
+    epochs=10,
     n_bins=51,
     MVC=False,
     ecs_thres=0.0,
@@ -257,15 +323,48 @@ scg.utils.add_file_handler(logger, save_dir / "run.log")
 # ========================================================================
 if dataset_name == "ms":
     data_dir = Path("./data/annotation")
-    adata = sc.read(data_dir / "c_data.h5ad")
-    adata_test = sc.read(data_dir / "filtered_ms_adata.h5ad")
 
-    adata.obs["celltype"] = adata.obs["Factor Value[inferred cell type - authors labels]"].astype("category")
-    adata_test.obs["celltype"] = adata_test.obs["Factor Value[inferred cell type - authors labels]"].astype("category")
+    if cli_args.train_data or cli_args.test_data:
+        # 사용자 지정 파일 사용
+        train_file = cli_args.train_data or "c_data.h5ad"
+        test_file  = cli_args.test_data  or "filtered_ms_adata.h5ad"
+        adata      = sc.read(data_dir / train_file)
+        adata_test = sc.read(data_dir / test_file)
+
+        celltype_col = _detect_celltype_col(adata)
+
+        adata.obs["celltype"] = adata.obs[celltype_col].astype("category")
+        try:
+            adata_test.obs["celltype"] = adata_test.obs[_detect_celltype_col(adata_test)].astype("category")
+            test_has_labels = True
+        except (ValueError, KeyError):
+            warnings.warn(
+                "테스트 데이터에 정답 라벨(celltype) 컬럼이 없습니다. 모든 세포를 'unknown'으로 처리합니다."
+            )
+            adata_test.obs["celltype"] = "unknown"
+            test_has_labels = False
+        _setup_gene_index(adata)
+        _setup_gene_index(adata_test)
+    else:
+        # 기존 MS 데이터셋 (컬럼명 하드코딩)
+        adata      = sc.read(data_dir / "c_data.h5ad")
+        adata_test = sc.read(data_dir / "filtered_ms_adata.h5ad")
+
+        adata.obs["celltype"]      = adata.obs["Factor Value[inferred cell type - authors labels]"].astype("category")
+        try:
+            adata_test.obs["celltype"] = adata_test.obs["Factor Value[inferred cell type - authors labels]"].astype("category")
+            test_has_labels = True
+        except (ValueError, KeyError):
+            warnings.warn(
+                "테스트 데이터에 정답 라벨(celltype) 컬럼이 없습니다. 모든 세포를 'unknown'으로 처리합니다."
+            )
+            adata_test.obs["celltype"] = "unknown"
+            test_has_labels = False
+        adata.var.set_index(adata.var["gene_name"], inplace=True)
+        _setup_gene_index(adata_test)
+
     adata.obs["batch_id"] = adata.obs["str_batch"] = "0"
     adata_test.obs["batch_id"] = adata_test.obs["str_batch"] = "1"
-    adata.var.set_index(adata.var["gene_name"], inplace=True)
-    adata_test.var.set_index(adata_test.var["gene_name"], inplace=True)
 
     data_is_raw = False
     filter_gene_by_counts = False
@@ -320,7 +419,7 @@ preprocessor = Preprocessor(
     use_key="X",
     filter_gene_by_counts=filter_gene_by_counts,
     filter_cell_by_counts=False,
-    normalize_total=1e4,
+    normalize_total=False,
     result_normed_key="X_normed",
     log1p=data_is_raw,
     result_log1p_key="X_log1p",
@@ -812,7 +911,12 @@ for epoch in range(1, epochs + 1):
     val_loss, val_err, val_acc, val_precision, val_recall, val_f1 = evaluate(model, loader=valid_loader)
     elapsed = time.time() - epoch_start_time
     logger.info("-" * 89)
-    logger.info(f"| end of epoch {epoch:3d} | time: {elapsed:5.2f}s | valid loss {val_loss:5.4f} | err {val_err:5.4f} | acc {val_acc:5.4f} | precision {val_precision:5.4f} | recall {val_recall:5.4f} | f1 {val_f1:5.4f}")
+    logger.info(
+        f"| end of epoch {epoch:3d} | time: {elapsed:5.2f}s "
+        f"| valid loss {val_loss:5.4f} | err {val_err:5.4f} "
+        f"| acc {val_acc:5.4f} | precision {val_precision:5.4f} "
+        f"| recall {val_recall:5.4f} | f1 {val_f1:5.4f}"
+    )
     logger.info("-" * 89)
 
     if val_loss < best_val_loss:
@@ -869,58 +973,106 @@ def test(model: nn.Module, adata: AnnData) -> Tuple[np.ndarray, np.ndarray, dict
     model.eval()
     predictions = evaluate(model, loader=test_loader, return_raw=True)
 
-    accuracy = accuracy_score(celltypes_labels, predictions)
-    precision = precision_score(celltypes_labels, predictions, average="macro")
-    recall = recall_score(celltypes_labels, predictions, average="macro")
-    macro_f1 = f1_score(celltypes_labels, predictions, average="macro")
-
-    logger.info(f"Accuracy: {accuracy:.3f}, Precision: {precision:.3f}, Recall: {recall:.3f}, Macro F1: {macro_f1:.3f}")
-
-    results = {
-        "test/accuracy": accuracy,
-        "test/precision": precision,
-        "test/recall": recall,
-        "test/macro_f1": macro_f1,
-    }
+    if test_has_labels:
+        accuracy = accuracy_score(celltypes_labels, predictions)
+        precision = precision_score(celltypes_labels, predictions, average="macro")
+        recall = recall_score(celltypes_labels, predictions, average="macro")
+        macro_f1 = f1_score(celltypes_labels, predictions, average="macro")
+        logger.info(
+            f"Accuracy: {accuracy:.3f}, Precision: {precision:.3f}, "
+            f"Recall: {recall:.3f}, Macro F1: {macro_f1:.3f}"
+        )
+        results = {
+            "test/accuracy": accuracy,
+            "test/precision": precision,
+            "test/recall": recall,
+            "test/macro_f1": macro_f1,
+        }
+    else:
+        logger.info("테스트 데이터에 정답 라벨이 없어 정확도 계산을 건너뜁니다.")
+        results = {}
     return predictions, celltypes_labels, results
 
 
 # ── 테스트 실행 ────────────────────────────────────────────────────────
 predictions, labels, results = test(best_model, adata_test)
-adata_test_raw.obs["predictions"] = [id2type[p] for p in predictions]
 
-# UMAP 시각화
+# 예측 레이블 문자열로 변환 후 adata에 저장
+pred_celltypes = [id2type[p] for p in predictions]
+adata_test_raw.obs["predicted_celltype"] = pred_celltypes
+
+# ── annotated h5ad 저장 ───────────────────────────────────────────────
+output_path = cli_args.output_path or str(save_dir / "annotated_output.h5ad")
+adata_test_raw.write(output_path)
+logger.info(f"Saved annotated h5ad to: {output_path}")
+
+# 세포 유형별 예측 분포 출력
+print("\n=== Predicted cell type distribution ===")
+print(adata_test_raw.obs["predicted_celltype"].value_counts())
+
+# ── UMAP 시각화 ───────────────────────────────────────────────────────
 palette_ = plt.rcParams["axes.prop_cycle"].by_key()["color"] * 3
 palette_ = {c: palette_[i] for i, c in enumerate(celltypes)}
 
-with plt.rc_context({"figure.figsize": (6, 4), "figure.dpi": 300}):
-    sc.pl.umap(adata_test_raw, color=["celltype", "predictions"], palette=palette_, show=False)
-    plt.savefig(save_dir / "results.png", dpi=300)
+if "X_umap" not in adata_test_raw.obsm:
+    logger.info("X_umap 없음 → PCA/neighbors/UMAP 계산 중...")
+    sc.pp.pca(adata_test_raw)
+    sc.pp.neighbors(adata_test_raw)
+    sc.tl.umap(adata_test_raw)
 
-# 결과 저장
-save_dict = {"predictions": predictions, "labels": labels, "results": results, "id_maps": id2type}
+umap_colors = ["predicted_celltype"] if not test_has_labels else ["celltype", "predicted_celltype"]
+umap_fig_width = 12 if not test_has_labels else 24
+with plt.rc_context({"figure.figsize": (umap_fig_width, 8), "figure.dpi": 300}):
+    sc.pl.umap(
+        adata_test_raw,
+        color=umap_colors,
+        palette=palette_,
+        show=False,
+        legend_fontsize=8,
+        legend_fontoutline=2,
+        wspace=0.6
+    )
+    plt.savefig(save_dir / "results.png", dpi=300, bbox_inches="tight")
+
+# ── pkl 저장 ─────────────────────────────────────────────────────────
+save_dict = {
+    "predictions": predictions,
+    "labels": labels,
+    "results": results,
+    "id_maps": id2type,
+}
 with open(save_dir / "results.pkl", "wb") as f:
     pickle.dump(save_dict, f)
 
-results["test/cell_umap"] = wandb.Image(str(save_dir / "results.png"), caption=f"macro f1 {results['test/macro_f1']:.3f}")
+umap_caption = f"macro f1 {results['test/macro_f1']:.3f}" if test_has_labels else "predictions only"
+results["test/cell_umap"] = wandb.Image(
+    str(save_dir / "results.png"),
+    caption=umap_caption,
+)
 wandb.log(results)
 
 # ── Confusion Matrix ──────────────────────────────────────────────────
-celltypes_list = list(celltypes)
-for ct in set(id2type[p] for p in predictions):
-    if ct not in celltypes_list:
-        celltypes_list.remove(ct)
+if test_has_labels:
+    celltypes_list = list(celltypes)
+    cm = confusion_matrix(labels, predictions)
+    cm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis]
+    cm = pd.DataFrame(
+        cm,
+        index=celltypes_list[:cm.shape[0]],
+        columns=celltypes_list[:cm.shape[1]],
+    )
+    plt.figure(figsize=(18, 18))
+    plt.tight_layout()
+    sns.heatmap(cm, annot=True, fmt=".1f", cmap="Blues")
+    plt.savefig(save_dir / "confusion_matrix.png", dpi=300)
 
-cm = confusion_matrix(labels, predictions)
-cm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis]
-cm = pd.DataFrame(cm, index=celltypes_list[:cm.shape[0]], columns=celltypes_list[:cm.shape[1]])
-
-plt.figure(figsize=(10, 10))
-sns.heatmap(cm, annot=True, fmt=".1f", cmap="Blues")
-plt.savefig(save_dir / "confusion_matrix.png", dpi=300)
-
-results["test/confusion_matrix"] = wandb.Image(str(save_dir / "confusion_matrix.png"), caption="confusion matrix")
-wandb.log(results)
+    results["test/confusion_matrix"] = wandb.Image(
+        str(save_dir / "confusion_matrix.png"),
+        caption="confusion matrix",
+    )
+    wandb.log(results)
+else:
+    logger.info("테스트 데이터에 정답 라벨이 없어 Confusion Matrix 생성을 건너뜁니다.")
 
 # ── 최종 모델 저장 ────────────────────────────────────────────────────
 torch.save(best_model.state_dict(), save_dir / "model.pt")
