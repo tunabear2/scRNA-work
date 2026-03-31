@@ -120,21 +120,35 @@ def _setup_gene_index(adata):
     """유전자 식별자를 var 인덱스로 설정하고 gene_name 컬럼을 보장.
 
     우선순위:
-      1. var 컬럼 중 유전자명 키워드 탐지 → 해당 컬럼을 인덱스로 설정
-      2. 탐지 실패 시 → 현재 인덱스 값을 유전자 식별자로 간주 (인덱스 자체가 gene symbol인 경우)
+      1. var 인덱스가 이미 gene symbol이면 그대로 사용
+      2. var 인덱스가 Ensembl ID(ENS* 형태)인 경우 → var 컬럼에서 gene symbol 탐지 후 인덱스로 교체
+         탐지 실패 시 기존 Ensembl ID 인덱스 유지
 
     어느 경우든 var["gene_name"] 컬럼이 없으면 인덱스 값으로 채워
     downstream 및 AnnData.concatenate에서 일관되게 사용할 수 있도록 보장한다.
+    중복 유전자 인덱스 고유화 수행.
     """
-    try:
-        gene_col = _detect_gene_col(adata)
-        adata.var.set_index(adata.var[gene_col], inplace=True)
-        print(f"[gene-index] var 컬럼 '{gene_col}'을 유전자 인덱스로 사용합니다.")
-    except (ValueError, KeyError):
-        print("[gene-index] var 컬럼에서 유전자명을 탐지하지 못했습니다. var 인덱스를 유전자 식별자로 사용합니다.")
+    # 현재 인덱스가 Ensembl ID 형태인지 확인 (ENS로 시작하는 항목이 과반이면 Ensembl로 판단)
+    sample = adata.var.index[:20].tolist()
+    ensembl_count = sum(1 for g in sample if str(g).startswith("ENS"))
+    is_ensembl = ensembl_count > len(sample) / 2
+
+    if is_ensembl:
+        # Ensembl ID → var 컬럼에서 gene symbol 탐지 후 인덱스 교체
+        try:
+            gene_col = _detect_gene_col(adata)
+            adata.var.set_index(adata.var[gene_col], inplace=True)
+            print(f"[gene-index] Ensembl ID 인덱스를 var 컬럼 '{gene_col}'(gene symbol)로 교체합니다.")
+        except (ValueError, KeyError):
+            print("[gene-index] gene symbol 컬럼을 탐지하지 못했습니다. 기존 Ensembl ID 인덱스를 유지합니다.")
+    else:
+        print("[gene-index] var 인덱스가 이미 gene symbol입니다. 그대로 사용합니다.")
+
     # gene_name 컬럼이 없으면 인덱스 값으로 채움
     if "gene_name" not in adata.var.columns:
         adata.var["gene_name"] = adata.var.index.tolist()
+    # 중복 유전자 인덱스 고유화
+    adata.var_names_make_unique()
 
 
 # ── wandb shim ──────────────────────────────────────────────────────────
@@ -850,7 +864,9 @@ def evaluate(model: nn.Module, loader: DataLoader, return_raw: bool = False) -> 
                 loss = criterion_cls(output_values, celltype_labels)
                 if DAB:
                     loss_dab = criterion_dab(output_dict["dab_output"], batch_labels)
-            pred = output_values.argmax(1)
+            probs = torch.softmax(output_values, dim=1)
+            max_probs, pred = probs.max(1)
+            pred[max_probs < 0.5] = -1  # low confidence → unknown
             n = len(input_gene_ids)
             total_loss += loss.item() * n
             accuracy = (output_values.argmax(1) == celltype_labels).sum().item()
@@ -998,7 +1014,7 @@ def test(model: nn.Module, adata: AnnData) -> Tuple[np.ndarray, np.ndarray, dict
 predictions, labels, results = test(best_model, adata_test)
 
 # 예측 레이블 문자열로 변환 후 adata에 저장
-pred_celltypes = [id2type[p] for p in predictions]
+pred_celltypes = [id2type[p] if p != -1 else "unknown" for p in predictions]
 adata_test_raw.obs["predicted_celltype"] = pred_celltypes
 
 # ── annotated h5ad 저장 ───────────────────────────────────────────────
@@ -1007,8 +1023,11 @@ adata_test_raw.write(output_path)
 logger.info(f"Saved annotated h5ad to: {output_path}")
 
 # 세포 유형별 예측 분포 출력
-print("\n=== Predicted cell type distribution ===")
-print(adata_test_raw.obs["predicted_celltype"].value_counts())
+counts = adata_test_raw.obs["predicted_celltype"].value_counts()
+logger.info("=== Predicted cell type distribution ===")
+for ct, n in counts.items():
+    logger.info(f"  {ct}: {n}")
+logger.info(f"  Total: {counts.sum()}")
 
 # ── UMAP 시각화 ───────────────────────────────────────────────────────
 palette_ = plt.rcParams["axes.prop_cycle"].by_key()["color"] * 3
