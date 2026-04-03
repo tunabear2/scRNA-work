@@ -161,3 +161,18 @@ cython_debug/
 
 .DS_store
 **/*.DS_store/
+
+# Large data files and archives
+*.zip
+*.h5ad
+*.ckpt
+*.tsv
+
+# Large data directories
+GEARS/scFoundation/
+ablation/data/
+annotation/cell_type_rawdata/
+annotation/data/
+genemodule/data/
+mapping/data_mapping/
+model/examples/
