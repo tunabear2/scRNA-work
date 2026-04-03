@@ -144,7 +144,99 @@ python annotation/celltype-plot.py
 
 ---
 
-## 6. 참고사항
+## 6. Fine-tuning 분석
+
+### 제공 파일 구성
+
+| 파일 | 내용 |
+|------|------|
+| `model/finetune_model.py` | Fine-tuning 가이드용 템플릿 코드 |
+| `model/load.py` | 모델 로딩 유틸리티 |
+| `GEARS/gears/gears.py` | 실제 end-to-end fine-tuning 코드 (GEARS 전용) |
+
+---
+
+### Pretrain 코드는 미제공
+
+`model/training_hyperparameter.txt`에 pretrain 설정이 기록되어 있으나, 실제 학습 코드는 공개하지 않음.
+
+```
+trainer.params.num_nodes=64   # GPU 노드 64개
+trainer.params.precision=bf16
+training.batch_size=128
+optimizer.params.lr=1e-4
+```
+
+연구진이 내부적으로 DeepSpeed + 64 GPU 노드로 학습한 결과물(`models.ckpt`)만 배포.
+
+---
+
+### 다운스트림 태스크별 Fine-tuning 방식
+
+| 태스크 | 방식 | 학습 코드 제공 여부 |
+|--------|------|-------------------|
+| Cell Mapping | scFoundation frozen → 임베딩 추출 → 시각화 | ❌ |
+| Gene Module | scFoundation frozen → 임베딩 추출 → 클러스터링 | ❌ |
+| Cell Type Annotation | scFoundation frozen → MLP 분류기 학습 → 결과 저장 | ❌ (결과물만 제공) |
+| GEARS | scFoundation + GEARS 통합 → end-to-end fine-tuning | ✅ |
+
+---
+
+### Cell Type Annotation 실제 구조
+
+`seg-emb.pkl`, `zheng-emb-2mlp.pkl` 파일의 shape 분석 결과:
+- `seg-emb`: `(854, 13)` → 854개 세포, 13개 클래스의 **MLP 분류 logit**
+- `zheng-emb-2mlp`: `(6595, 11)` → 6595개 세포, 11개 클래스의 **MLP 분류 logit**
+
+즉, 연구진이 내부적으로 2-layer MLP 분류기를 fine-tuning한 후 결과만 저장해서 제공.  
+**학습 코드는 미제공** → 다른 데이터로 annotation fine-tuning 하려면 직접 구현 필요.
+
+---
+
+### scFoundation vs 다른 scFM 비교
+
+| | scFoundation | scGPT / scBERT |
+|--|--|--|
+| Pretrained 모델 제공 | ✅ | ✅ |
+| Annotation fine-tuning 코드 | ❌ | ✅ |
+| 제공 형태 | 학습 완료된 결과물(.pkl, .npy) | 학습 코드 전체 |
+
+---
+
+### GEARS Fine-tuning 옵션
+
+GEARS는 `finetune_method` 파라미터로 fine-tuning 방식을 선택 가능:
+
+| 옵션 | 동작 |
+|------|------|
+| `'frozen'` | scFoundation 가중치 완전 고정, GEARS 레이어만 학습 |
+| `'finetune_lr_1'` | scFoundation은 lr×0.1로 천천히 학습, GEARS는 lr로 학습 |
+| `None` | 전체 모델 모두 학습 |
+
+---
+
+### 외부 데이터로 scFoundation 사용하는 방법
+
+Fine-tuning 코드가 없더라도 외부 `.h5ad` 데이터에 scFoundation 적용 가능.  
+경로 수정만으로 기존 실습 코드 재사용 가능.
+
+```python
+# Step 1. 유전자 이름을 19264개 목록에 맞춤 (없는 유전자는 0으로 padding)
+gene_list_df = pd.read_csv('OS_scRNA_gene_index.19264.tsv', delimiter='\t')
+gene_list = list(gene_list_df['gene_name'])
+X_df, to_fill_columns, var = main_gene_selection(X_df, gene_list)
+
+# Step 2. 임베딩 추출
+# python model/get_embedding.py --input_type singlecell --output_type cell \
+#   --data_path ./my_data.h5ad --save_path ./output/ --pre_normalized F
+
+# Step 3. 추출된 임베딩을 실습 코드에 연결
+scfemb = np.load('./output/my_data_embedding.npy')
+```
+
+---
+
+## 7. 참고사항
 
 - 원본 논문: [scFoundation - Nature Methods 2024](https://www.nature.com/articles/s41592-024-02305-7)
 - 데이터 출처: [Figshare](https://dx.doi.org/10.6084/m9.figshare.24049200)
