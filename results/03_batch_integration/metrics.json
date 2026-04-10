@@ -1,0 +1,24 @@
+{
+  "task": "03_batch_integration",
+  "dataset": "PBMC_10K",
+  "scib": {
+    "0": {
+      "NMI_cluster/label": 0.025166667215652135,
+      "ARI_cluster/label": 3.804319401160629e-05,
+      "ASW_label": 0.49999653126064914,
+      "ASW_label/batch": 0.9999687480491676,
+      "PCR_batch": NaN,
+      "cell_cycle_conservation": NaN,
+      "isolated_label_F1": NaN,
+      "isolated_label_silhouette": 0.49999696407884486,
+      "graph_conn": NaN,
+      "kBET": NaN,
+      "iLISI": NaN,
+      "cLISI": NaN,
+      "hvg_overlap": NaN,
+      "trajectory": NaN
+    }
+  },
+  "timestamp": "2026-04-10T19:01:38.137961",
+  "embedding": "/home/tunabear2/DW/scFM/results/03_batch_integration/PBMC_embeddings.npy"
+}

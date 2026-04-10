@@ -1,0 +1,30 @@
+[2026-04-10 19:02:32][INFO] === 06_multiclass_gene_function 시작: 2026-04-10 19:02:32 ===
+[2026-04-10 19:02:32][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/06_multiclass_gene_function/run.log
+[2026-04-10 19:02:34][INFO] 기존 gene embedding 사용: /home/tunabear2/DW/scFM/datasets/CellFM/cellFM_embedding.pt
+[2026-04-10 19:02:34][INFO] gene_emb: torch.Size([24080, 1536]), gene_index: 24078
+[2026-04-10 19:02:34][INFO] ── GO 태스크: MF top10 ──
+[2026-04-10 19:02:34][INFO] 샘플 수: train=7749, valid=63, test=24
+[2026-04-10 19:02:36][INFO] Epoch [1/5] train_loss=1.2852 train_AUPR=0.3263 val_loss=1.0719 val_AUPR=0.5884 Fmax=0.7270
+[2026-04-10 19:02:36][INFO] Epoch [2/5] train_loss=1.1034 train_AUPR=0.3300 val_loss=1.0199 val_AUPR=0.6066 Fmax=0.7476
+[2026-04-10 19:02:36][INFO] Epoch [3/5] train_loss=1.0574 train_AUPR=0.3420 val_loss=0.9963 val_AUPR=0.6156 Fmax=0.7460
+[2026-04-10 19:02:36][INFO] Epoch [4/5] train_loss=1.0326 train_AUPR=0.3607 val_loss=0.9912 val_AUPR=0.6173 Fmax=0.7460
+[2026-04-10 19:02:37][INFO] Epoch [5/5] train_loss=1.0145 train_AUPR=0.3804 val_loss=0.9916 val_AUPR=0.6184 Fmax=0.7497
+[2026-04-10 19:02:37][INFO] MF 테스트 결과: best_epoch=3, AUPR=0.7530, Fmax=0.8066
+[2026-04-10 19:02:37][INFO] ── GO 태스크: CC top10 ──
+[2026-04-10 19:02:37][INFO] 샘플 수: train=11940, valid=100, test=338
+[2026-04-10 19:02:38][INFO] Epoch [1/5] train_loss=1.2341 train_AUPR=0.6797 val_loss=1.1732 val_AUPR=0.7704 Fmax=0.7351
+[2026-04-10 19:02:38][INFO] Epoch [2/5] train_loss=1.1003 train_AUPR=0.7166 val_loss=1.2031 val_AUPR=0.7786 Fmax=0.7449
+[2026-04-10 19:02:38][INFO] Epoch [3/5] train_loss=1.0704 train_AUPR=0.7298 val_loss=1.1457 val_AUPR=0.7905 Fmax=0.7452
+[2026-04-10 19:02:39][INFO] Epoch [4/5] train_loss=1.0532 train_AUPR=0.7437 val_loss=1.1552 val_AUPR=0.7931 Fmax=0.7499
+[2026-04-10 19:02:39][INFO] Epoch [5/5] train_loss=1.0381 train_AUPR=0.7586 val_loss=1.1421 val_AUPR=0.7981 Fmax=0.7541
+[2026-04-10 19:02:39][INFO] CC 테스트 결과: best_epoch=4, AUPR=0.8814, Fmax=0.6419
+[2026-04-10 19:02:39][INFO] ── GO 태스크: BP top10 ──
+[2026-04-10 19:02:40][INFO] 샘플 수: train=10480, valid=105, test=58
+[2026-04-10 19:02:40][INFO] Epoch [1/5] train_loss=1.3513 train_AUPR=0.5765 val_loss=1.3514 val_AUPR=0.5467 Fmax=0.6608
+[2026-04-10 19:02:40][INFO] Epoch [2/5] train_loss=1.2944 train_AUPR=0.6143 val_loss=1.3538 val_AUPR=0.5496 Fmax=0.6521
+[2026-04-10 19:02:41][INFO] Epoch [3/5] train_loss=1.2774 train_AUPR=0.6419 val_loss=1.3382 val_AUPR=0.5544 Fmax=0.6619
+[2026-04-10 19:02:41][INFO] Epoch [4/5] train_loss=1.2622 train_AUPR=0.6647 val_loss=1.3390 val_AUPR=0.5569 Fmax=0.6721
+[2026-04-10 19:02:41][INFO] Epoch [5/5] train_loss=1.2481 train_AUPR=0.6844 val_loss=1.3441 val_AUPR=0.5505 Fmax=0.6622
+[2026-04-10 19:02:41][INFO] BP 테스트 결과: best_epoch=2, AUPR=0.5610, Fmax=0.6884
+[2026-04-10 19:02:41][INFO] 전체 결과: {'MF': {'AUPR': 0.7530088524643128, 'Fmax': 0.8066253827205967, 'best_epoch': 3, 'checkpoint': '/home/tunabear2/DW/scFM/checkpoint/GeneFunction/MF_top10_best.pth'}, 'CC': {'AUPR': 0.8813739505117268, 'Fmax': 0.6419142004137606, 'best_epoch': 4, 'checkpoint': '/home/tunabear2/DW/scFM/checkpoint/GeneFunction/CC_top10_best.pth'}, 'BP': {'AUPR': 0.5609869850341848, 'Fmax': 0.6883662429326788, 'best_epoch': 2, 'checkpoint': '/home/tunabear2/DW/scFM/checkpoint/GeneFunction/BP_top10_best.pth'}}
+[2026-04-10 19:02:41][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/06_multiclass_gene_function/metrics.json

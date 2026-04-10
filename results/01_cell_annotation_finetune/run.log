@@ -1,0 +1,41 @@
+[2026-04-10 13:49:57][INFO] === 01_cell_annotation_finetune 시작: 2026-04-10 13:49:57 ===
+[2026-04-10 13:49:57][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/01_cell_annotation_finetune/run.log
+[2026-04-10 15:42:49][INFO] === 01_cell_annotation_finetune 시작: 2026-04-10 15:42:49 ===
+[2026-04-10 15:42:49][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/01_cell_annotation_finetune/run.log
+[2026-04-10 15:42:50][INFO] 데이터 로드: (14818, 3000), 14 classes
+[2026-04-10 15:42:51][INFO] train=10600, test=4218
+[2026-04-10 15:42:56][INFO] 가중치 로드 완료 (전체 파인튜닝)
+[2026-04-10 15:44:34][INFO] Epoch 1: train_loss=10.2021  test_acc=0.9777
+[2026-04-10 15:44:34][INFO]   ▶ 베스트 저장 acc=0.9777
+[2026-04-10 15:46:12][INFO] Epoch 2: train_loss=9.2306  test_acc=0.9730
+[2026-04-10 15:47:49][INFO] Epoch 3: train_loss=9.0728  test_acc=0.9673
+[2026-04-10 15:49:27][INFO] Epoch 4: train_loss=9.0197  test_acc=0.9777
+[2026-04-10 15:51:04][INFO] Epoch 5: train_loss=8.9872  test_acc=0.9692
+[2026-04-10 15:52:42][INFO] Epoch 6: train_loss=8.9747  test_acc=0.9656
+[2026-04-10 15:54:19][INFO] Epoch 7: train_loss=8.9602  test_acc=0.9761
+[2026-04-10 15:55:56][INFO] Epoch 8: train_loss=8.9310  test_acc=0.9761
+[2026-04-10 15:57:34][INFO] Epoch 9: train_loss=8.9369  test_acc=0.9765
+[2026-04-10 15:59:11][INFO] Epoch 10: train_loss=8.9162  test_acc=0.9798
+[2026-04-10 15:59:11][INFO]   ▶ 베스트 저장 acc=0.9798
+[2026-04-10 16:00:49][INFO] Epoch 11: train_loss=8.9278  test_acc=0.9704
+[2026-04-10 16:02:26][INFO] Epoch 12: train_loss=8.9261  test_acc=0.9801
+[2026-04-10 16:02:27][INFO]   ▶ 베스트 저장 acc=0.9801
+[2026-04-10 16:04:04][INFO] Epoch 13: train_loss=8.9430  test_acc=0.9789
+[2026-04-10 16:05:41][INFO] Epoch 14: train_loss=8.9566  test_acc=0.9687
+[2026-04-10 16:07:19][INFO] Epoch 15: train_loss=8.9885  test_acc=0.9490
+[2026-04-10 16:08:56][INFO] Epoch 16: train_loss=8.9689  test_acc=0.9711
+[2026-04-10 16:10:34][INFO] Epoch 17: train_loss=9.0007  test_acc=0.9538
+[2026-04-10 16:12:11][INFO] Epoch 18: train_loss=9.0353  test_acc=0.9699
+[2026-04-10 16:13:49][INFO] Epoch 19: train_loss=9.0361  test_acc=0.9670
+[2026-04-10 16:15:26][INFO] Epoch 20: train_loss=9.0676  test_acc=0.9708
+[2026-04-10 16:17:03][INFO] Epoch 21: train_loss=9.2250  test_acc=0.9720
+[2026-04-10 16:18:41][INFO] Epoch 22: train_loss=9.3938  test_acc=0.8845
+[2026-04-10 16:20:18][INFO] Epoch 23: train_loss=9.3870  test_acc=0.8073
+[2026-04-10 16:21:56][INFO] Epoch 24: train_loss=9.3523  test_acc=0.8663
+[2026-04-10 16:23:33][INFO] Epoch 25: train_loss=9.5267  test_acc=0.9329
+[2026-04-10 16:25:10][INFO] Epoch 26: train_loss=9.6596  test_acc=0.9583
+[2026-04-10 16:26:48][INFO] Epoch 27: train_loss=9.6367  test_acc=0.9666
+[2026-04-10 16:28:25][INFO] Epoch 28: train_loss=9.3747  test_acc=0.9680
+[2026-04-10 16:30:03][INFO] Epoch 29: train_loss=9.3037  test_acc=0.9701
+[2026-04-10 16:31:40][INFO] Epoch 30: train_loss=9.3916  test_acc=0.9528
+[2026-04-10 16:31:40][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/01_cell_annotation_finetune/metrics.json

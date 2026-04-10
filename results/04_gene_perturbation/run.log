@@ -1,0 +1,32 @@
+[2026-04-10 19:06:20][INFO] === 04_gene_perturbation 시작: 2026-04-10 19:06:20 ===
+[2026-04-10 19:06:20][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/04_gene_perturbation/run.log
+[2026-04-10 19:06:27][INFO] === 04_gene_perturbation 시작: 2026-04-10 19:06:27 ===
+[2026-04-10 19:06:27][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/04_gene_perturbation/run.log
+[2026-04-10 19:19:39][INFO] === 04_gene_perturbation 시작: 2026-04-10 19:19:39 ===
+[2026-04-10 19:19:39][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/04_gene_perturbation/run.log
+[2026-04-10 19:20:14][INFO] GEARS 데이터 준비 중...
+[2026-04-10 19:20:14][INFO] norman.h5ad → GEARS 포맷 변환: /home/tunabear2/DW/scFM/datasets/CellFM/norman
+[2026-04-10 19:20:15][INFO] 로드: shape=(80506, 1049), obs=['condition', 'pert_type', 'cell_type', 'guide_identity', 'read_count', 'UMI_count', 'coverage', 'gemgroup', 'good_coverage', 'number_of_cells', 'n_genes', 'cell_type_condition', 'lane', 'dose_val', 'control', 'condition_name', 'total_count']
+[2026-04-10 19:20:16][INFO] 변환 완료: /home/tunabear2/DW/scFM/datasets/CellFM/norman/perturb_processed.h5ad
+[2026-04-10 19:24:32][INFO] 로컬 데이터 로드 성공
+[2026-04-10 19:24:32][INFO] 데이터 로더 준비 완료
+[2026-04-10 19:26:17][INFO] === 04_gene_perturbation 시작: 2026-04-10 19:26:17 ===
+[2026-04-10 19:26:17][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/04_gene_perturbation/run.log
+[2026-04-10 19:26:53][INFO] GEARS 데이터 준비 중...
+[2026-04-10 19:26:53][INFO] 캐시 데이터 사용: /home/tunabear2/DW/scFM/datasets/CellFM/norman
+[2026-04-10 19:27:09][INFO] 로컬 데이터 로드 성공
+[2026-04-10 19:27:09][INFO] 데이터 로더 준비 완료
+[2026-04-10 19:28:35][INFO] 모델 초기화 완료. 학습 시작 (15 epoch)
+[2026-04-10 20:00:09][INFO] 학습 완료. 결과: /home/tunabear2/DW/scFM/results/04_gene_perturbation
+[2026-04-10 20:00:09][INFO] 예측 샘플: ['CBL_CNN1', 'FEV']
+[2026-04-10 20:00:09][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/04_gene_perturbation/metrics.json
+[2026-04-10 20:16:14][INFO] === 04_gene_perturbation 시작: 2026-04-10 20:16:14 ===
+[2026-04-10 20:16:14][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/04_gene_perturbation/run.log
+[2026-04-10 20:16:50][INFO] GEARS 데이터 준비 중...
+[2026-04-10 20:16:50][INFO] 캐시 데이터 사용: /home/tunabear2/DW/scFM/datasets/CellFM/norman
+[2026-04-10 20:17:06][INFO] 로컬 데이터 로드 성공
+[2026-04-10 20:17:06][INFO] 데이터 로더 준비 완료
+[2026-04-10 20:17:19][INFO] 모델 초기화 완료. 학습 시작 (15 epoch)
+[2026-04-10 20:48:31][INFO] 학습 완료. 결과: /home/tunabear2/DW/scFM/results/04_gene_perturbation
+[2026-04-10 20:48:51][INFO] test_metrics: {'mse': 0.01129655696490069, 'mse_de': 0.22639359561390407, 'pearson': 0.975299951431694, 'pearson_de': 0.9009990308428488}
+[2026-04-10 20:48:51][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/04_gene_perturbation/metrics.json

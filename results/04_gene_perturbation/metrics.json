@@ -1,0 +1,12 @@
+{
+  "task": "04_gene_perturbation",
+  "dataset": "norman",
+  "epochs": 15,
+  "split": "simulation",
+  "mse": 0.01129655696490069,
+  "mse_de": 0.22639359561390407,
+  "pearson": 0.975299951431694,
+  "pearson_de": 0.9009990308428488,
+  "timestamp": "2026-04-10T20:48:51.796550",
+  "result_dir": "/home/tunabear2/DW/scFM/results/04_gene_perturbation"
+}

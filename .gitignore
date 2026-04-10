@@ -1,22 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
 # Data files (large)
 data/
+datasets/
 *.h5
 *.h5ad
 *.npy
 *.npz
 *.pkl
 *.pickle
+*.faiss
 
 # CSV/TSV (potentially large)
 *.csv
 *.tsv
 
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
+# Model checkpoints
+checkpoint/
+*.pt
+*.pth
+*.ckpt
+*.bin
 
 # Jupyter
 .ipynb_checkpoints/
@@ -27,12 +39,6 @@ venv/
 env/
 .env
 
-# Model checkpoints
-*.pt
-*.pth
-*.ckpt
-*.bin
-
 # Logs
 *.log
 logs/
@@ -41,4 +47,3 @@ logs/
 .vscode/
 .idea/
 scBERT/scBERT/
-*.faiss

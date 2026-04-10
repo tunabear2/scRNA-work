@@ -1,0 +1,76 @@
+[2026-04-10 17:21:20][INFO] === 02_cell_annotation_zeroshot 시작: 2026-04-10 17:21:20 ===
+[2026-04-10 17:21:20][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/02_cell_annotation_zeroshot/run.log
+[2026-04-10 17:21:21][INFO] 데이터 로드: (14818, 3000), 14 classes
+[2026-04-10 17:21:23][INFO] train=10600, test=4218
+[2026-04-10 17:21:27][INFO] Backbone 동결 완료. 학습 가능 파라미터: 198,798
+[2026-04-10 17:21:59][INFO] Epoch 1: cls_loss=1.9310  test_acc=0.4768
+[2026-04-10 17:22:00][INFO]   ▶ 베스트 저장 acc=0.4768
+[2026-04-10 17:22:32][INFO] Epoch 2: cls_loss=1.8334  test_acc=0.4768
+[2026-04-10 17:23:03][INFO] Epoch 3: cls_loss=1.8335  test_acc=0.2385
+[2026-04-10 17:23:35][INFO] Epoch 4: cls_loss=1.8326  test_acc=0.4768
+[2026-04-10 17:24:07][INFO] Epoch 5: cls_loss=1.8325  test_acc=0.4768
+[2026-04-10 17:24:39][INFO] Epoch 6: cls_loss=1.8333  test_acc=0.2385
+[2026-04-10 17:25:11][INFO] Epoch 7: cls_loss=1.8330  test_acc=0.2385
+[2026-04-10 17:25:42][INFO] Epoch 8: cls_loss=1.8319  test_acc=0.2385
+[2026-04-10 17:26:14][INFO] Epoch 9: cls_loss=1.8329  test_acc=0.4768
+[2026-04-10 17:26:46][INFO] Epoch 10: cls_loss=1.8333  test_acc=0.2385
+[2026-04-10 17:27:18][INFO] Epoch 11: cls_loss=1.8318  test_acc=0.4768
+[2026-04-10 17:27:50][INFO] Epoch 12: cls_loss=1.8322  test_acc=0.2385
+[2026-04-10 17:28:22][INFO] Epoch 13: cls_loss=1.8325  test_acc=0.2385
+[2026-04-10 17:28:53][INFO] Epoch 14: cls_loss=1.8325  test_acc=0.2385
+[2026-04-10 17:29:25][INFO] Epoch 15: cls_loss=1.8322  test_acc=0.2385
+[2026-04-10 17:29:57][INFO] Epoch 16: cls_loss=1.8320  test_acc=0.2385
+[2026-04-10 17:30:29][INFO] Epoch 17: cls_loss=1.8323  test_acc=0.2385
+[2026-04-10 17:31:01][INFO] Epoch 18: cls_loss=1.8318  test_acc=0.2385
+[2026-04-10 17:31:33][INFO] Epoch 19: cls_loss=1.8324  test_acc=0.2385
+[2026-04-10 17:32:04][INFO] Epoch 20: cls_loss=1.8323  test_acc=0.4768
+[2026-04-10 17:32:36][INFO] Epoch 21: cls_loss=1.8326  test_acc=0.2385
+[2026-04-10 17:33:08][INFO] Epoch 22: cls_loss=1.8308  test_acc=0.2385
+[2026-04-10 17:33:40][INFO] Epoch 23: cls_loss=1.8320  test_acc=0.4768
+[2026-04-10 17:34:12][INFO] Epoch 24: cls_loss=1.8327  test_acc=0.2385
+[2026-04-10 17:34:44][INFO] Epoch 25: cls_loss=1.8328  test_acc=0.2385
+[2026-04-10 17:35:15][INFO] Epoch 26: cls_loss=1.8320  test_acc=0.2385
+[2026-04-10 17:35:47][INFO] Epoch 27: cls_loss=1.8320  test_acc=0.2385
+[2026-04-10 17:36:19][INFO] Epoch 28: cls_loss=1.8316  test_acc=0.2385
+[2026-04-10 17:36:51][INFO] Epoch 29: cls_loss=1.8324  test_acc=0.4768
+[2026-04-10 17:37:23][INFO] Epoch 30: cls_loss=1.8325  test_acc=0.2385
+[2026-04-10 17:37:23][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/02_cell_annotation_zeroshot/metrics.json
+[2026-04-10 18:24:59][INFO] === 02_cell_annotation_zeroshot 시작: 2026-04-10 18:24:59 ===
+[2026-04-10 18:24:59][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/02_cell_annotation_zeroshot/run.log
+[2026-04-10 18:25:00][INFO] 데이터 로드: (14818, 3000), 14 classes
+[2026-04-10 18:25:02][INFO] train=10600, test=4218
+[2026-04-10 18:25:07][INFO] Backbone 동결 완료. 학습 가능 파라미터: 198,798
+[2026-04-10 18:25:39][INFO] Epoch 1: cls_loss=1.9343  test_acc=0.0495
+[2026-04-10 18:25:39][INFO]   ▶ 베스트 저장 acc=0.0495
+[2026-04-10 18:26:11][INFO] Epoch 2: cls_loss=1.8337  test_acc=0.2385
+[2026-04-10 18:26:11][INFO]   ▶ 베스트 저장 acc=0.2385
+[2026-04-10 18:26:43][INFO] Epoch 3: cls_loss=1.8331  test_acc=0.2385
+[2026-04-10 18:27:14][INFO] Epoch 4: cls_loss=1.8325  test_acc=0.2385
+[2026-04-10 18:27:46][INFO] Epoch 5: cls_loss=1.8338  test_acc=0.2385
+[2026-04-10 18:28:18][INFO] Epoch 6: cls_loss=1.8331  test_acc=0.4768
+[2026-04-10 18:28:18][INFO]   ▶ 베스트 저장 acc=0.4768
+[2026-04-10 18:28:50][INFO] Epoch 7: cls_loss=1.8330  test_acc=0.4768
+[2026-04-10 18:29:22][INFO] Epoch 8: cls_loss=1.8328  test_acc=0.0495
+[2026-04-10 18:29:53][INFO] Epoch 9: cls_loss=1.8328  test_acc=0.4768
+[2026-04-10 18:30:25][INFO] Epoch 10: cls_loss=1.8323  test_acc=0.2385
+[2026-04-10 18:30:57][INFO] Epoch 11: cls_loss=1.8321  test_acc=0.4768
+[2026-04-10 18:31:28][INFO] Epoch 12: cls_loss=1.8326  test_acc=0.4768
+[2026-04-10 18:32:00][INFO] Epoch 13: cls_loss=1.8327  test_acc=0.2385
+[2026-04-10 18:32:32][INFO] Epoch 14: cls_loss=1.8324  test_acc=0.2385
+[2026-04-10 18:33:04][INFO] Epoch 15: cls_loss=1.8321  test_acc=0.4768
+[2026-04-10 18:33:35][INFO] Epoch 16: cls_loss=1.8327  test_acc=0.4768
+[2026-04-10 18:34:07][INFO] Epoch 17: cls_loss=1.8329  test_acc=0.4768
+[2026-04-10 18:34:39][INFO] Epoch 18: cls_loss=1.8329  test_acc=0.4768
+[2026-04-10 18:35:11][INFO] Epoch 19: cls_loss=1.8327  test_acc=0.2385
+[2026-04-10 18:35:42][INFO] Epoch 20: cls_loss=1.8323  test_acc=0.2385
+[2026-04-10 18:36:14][INFO] Epoch 21: cls_loss=1.8320  test_acc=0.2385
+[2026-04-10 18:36:46][INFO] Epoch 22: cls_loss=1.8322  test_acc=0.2385
+[2026-04-10 18:37:18][INFO] Epoch 23: cls_loss=1.8322  test_acc=0.0495
+[2026-04-10 18:37:49][INFO] Epoch 24: cls_loss=1.8325  test_acc=0.4768
+[2026-04-10 18:38:21][INFO] Epoch 25: cls_loss=1.8327  test_acc=0.2385
+[2026-04-10 18:38:53][INFO] Epoch 26: cls_loss=1.8320  test_acc=0.2385
+[2026-04-10 18:39:25][INFO] Epoch 27: cls_loss=1.8324  test_acc=0.4768
+[2026-04-10 18:39:56][INFO] Epoch 28: cls_loss=1.8321  test_acc=0.4768
+[2026-04-10 18:40:28][INFO] Epoch 29: cls_loss=1.8319  test_acc=0.4768
+[2026-04-10 18:41:00][INFO] Epoch 30: cls_loss=1.8315  test_acc=0.2385
+[2026-04-10 18:41:00][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/02_cell_annotation_zeroshot/metrics.json

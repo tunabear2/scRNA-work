@@ -1,0 +1,29 @@
+[2026-04-10 19:03:04][INFO] === 07_lncrna 시작: 2026-04-10 19:03:04 ===
+[2026-04-10 19:03:04][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/07_lncrna/run.log
+[2026-04-10 19:03:04][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 19:03:05][INFO] LncRNADataset: 11990 cells, 2048 genes
+[2026-04-10 19:03:10][INFO] 사전학습 모델 로드 완료
+[2026-04-10 19:03:10][INFO] 어텐션 분석 시작...
+[2026-04-10 19:03:14][INFO] === 07_lncrna 시작: 2026-04-10 19:03:14 ===
+[2026-04-10 19:03:14][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/07_lncrna/run.log
+[2026-04-10 19:03:14][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 19:03:15][INFO] LncRNADataset: 11990 cells, 2048 genes
+[2026-04-10 19:03:20][INFO] 사전학습 모델 로드 완료
+[2026-04-10 19:03:20][INFO] 어텐션 분석 시작...
+[2026-04-10 19:03:43][INFO] === 07_lncrna 시작: 2026-04-10 19:03:43 ===
+[2026-04-10 19:03:43][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/07_lncrna/run.log
+[2026-04-10 19:03:43][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 19:03:44][INFO] LncRNADataset: 11990 cells, 2048 genes
+[2026-04-10 19:03:49][INFO] 사전학습 모델 로드 완료
+[2026-04-10 19:03:49][INFO] 어텐션 분석 시작...
+[2026-04-10 19:04:34][INFO] B cells: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] CD4 T cells: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] CD8 T cells: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] CD14+ Monocytes: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] Dendritic Cells: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] FCGR3A+ Monocytes: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] Megakaryocytes: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] NK cells: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] Other: lncRNA top5=[]
+[2026-04-10 19:04:34][INFO] lncRNA 결과 저장: /home/tunabear2/DW/scFM/results/07_lncrna/lncrna_results.csv
+[2026-04-10 19:04:34][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/07_lncrna/metrics.json

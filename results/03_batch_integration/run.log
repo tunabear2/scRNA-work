@@ -1,0 +1,42 @@
+[2026-04-10 18:55:08][INFO] === 03_batch_integration 시작: 2026-04-10 18:55:08 ===
+[2026-04-10 18:55:08][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/03_batch_integration/run.log
+[2026-04-10 18:55:08][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 18:55:09][INFO] PBMC Dataset: 11990 cells, 2048 genes used
+[2026-04-10 18:55:14][INFO] 사전학습 모델 로드 완료 (임베딩 추출 전용)
+[2026-04-10 18:55:24][INFO] === 03_batch_integration 시작: 2026-04-10 18:55:24 ===
+[2026-04-10 18:55:24][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/03_batch_integration/run.log
+[2026-04-10 18:55:24][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 18:55:25][INFO] PBMC Dataset: 11990 cells, 2048 genes used
+[2026-04-10 18:55:30][INFO] 사전학습 모델 로드 완료 (임베딩 추출 전용)
+[2026-04-10 18:56:03][INFO] === 03_batch_integration 시작: 2026-04-10 18:56:03 ===
+[2026-04-10 18:56:03][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/03_batch_integration/run.log
+[2026-04-10 18:56:03][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 18:56:04][INFO] PBMC Dataset: 11990 cells, 2048 genes used
+[2026-04-10 18:56:09][INFO] 사전학습 모델 로드 완료 (임베딩 추출 전용)
+[2026-04-10 18:56:21][INFO] 임베딩 추출 완료: shape=(11990, 1536)
+[2026-04-10 18:56:22][WARNING] scib 메트릭 계산 실패: metrics() got an unexpected keyword argument 'ari'
+[2026-04-10 18:56:22][INFO] scib 메트릭: {}
+[2026-04-10 18:57:35][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_cell_type.png
+[2026-04-10 18:57:35][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_batch.png
+[2026-04-10 18:57:35][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/metrics.json
+[2026-04-10 18:57:59][INFO] === 03_batch_integration 시작: 2026-04-10 18:57:59 ===
+[2026-04-10 18:57:59][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/03_batch_integration/run.log
+[2026-04-10 18:57:59][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 18:58:01][INFO] PBMC Dataset: 11990 cells, 2048 genes used
+[2026-04-10 18:58:05][INFO] 사전학습 모델 로드 완료 (임베딩 추출 전용)
+[2026-04-10 18:58:18][INFO] 임베딩 추출 완료: shape=(11990, 1536)
+[2026-04-10 18:59:09][WARNING] scib 메트릭 계산 실패: No module named 'louvain'
+[2026-04-10 18:59:09][INFO] scib 메트릭: {}
+[2026-04-10 18:59:29][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_cell_type.png
+[2026-04-10 18:59:29][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_batch.png
+[2026-04-10 18:59:29][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/metrics.json
+[2026-04-10 18:59:46][INFO] === 03_batch_integration 시작: 2026-04-10 18:59:46 ===
+[2026-04-10 18:59:46][INFO] 로그 파일: /home/tunabear2/DW/scFM/results/03_batch_integration/run.log
+[2026-04-10 18:59:46][INFO] 데이터 로드: (11990, 3346), obs=['n_counts', 'batch', 'labels', 'str_labels', 'cell_type', 'train']
+[2026-04-10 18:59:48][INFO] PBMC Dataset: 11990 cells, 2048 genes used
+[2026-04-10 18:59:53][INFO] 사전학습 모델 로드 완료 (임베딩 추출 전용)
+[2026-04-10 19:00:05][INFO] 임베딩 추출 완료: shape=(11990, 1536)
+[2026-04-10 19:01:18][INFO] scib 메트릭: {0: {'NMI_cluster/label': 0.025166667215652135, 'ARI_cluster/label': 3.804319401160629e-05, 'ASW_label': 0.49999653126064914, 'ASW_label/batch': 0.9999687480491676, 'PCR_batch': nan, 'cell_cycle_conservation': nan, 'isolated_label_F1': nan, 'isolated_label_silhouette': 0.49999696407884486, 'graph_conn': nan, 'kBET': nan, 'iLISI': nan, 'cLISI': nan, 'hvg_overlap': nan, 'trajectory': nan}}
+[2026-04-10 19:01:38][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_cell_type.png
+[2026-04-10 19:01:38][INFO] UMAP 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/figures/umap_batch.png
+[2026-04-10 19:01:38][INFO] 결과 저장: /home/tunabear2/DW/scFM/results/03_batch_integration/metrics.json

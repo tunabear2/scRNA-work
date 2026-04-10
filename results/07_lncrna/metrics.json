@@ -1,0 +1,46 @@
+{
+  "task": "07_lncrna",
+  "dataset": "PBMC_10K",
+  "model": "/home/tunabear2/DW/scFM/checkpoint/CellFM_80M_weight.ckpt",
+  "topk": 100,
+  "summary": {
+    "B cells": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "CD4 T cells": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "CD8 T cells": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "CD14+ Monocytes": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "Dendritic Cells": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "FCGR3A+ Monocytes": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "Megakaryocytes": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "NK cells": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    },
+    "Other": {
+      "top100_lncRNA_count": 0,
+      "top100_lncRNA_ratio": 0.0
+    }
+  },
+  "timestamp": "2026-04-10T19:04:34.894064",
+  "output": "/home/tunabear2/DW/scFM/results/07_lncrna/lncrna_results.csv"
+}

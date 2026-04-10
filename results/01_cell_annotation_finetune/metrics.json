@@ -1,0 +1,8 @@
+{
+  "task": "01_cell_annotation_finetune",
+  "dataset": "hPancreas",
+  "epochs": 30,
+  "best_acc": 0.9800853485064012,
+  "timestamp": "2026-04-10T16:31:40.368557",
+  "checkpoint": "/home/tunabear2/DW/scFM/checkpoint/CellAnnotation/hPancreas_finetune_best.pth"
+}

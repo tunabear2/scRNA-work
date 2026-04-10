@@ -1,0 +1,901 @@
+cell_type,rank,gene,attn_score,gene_type
+B cells,1,ABCC5,90.06358337402344,protein coding
+B cells,2,NSUN3,79.42631530761719,protein coding
+B cells,3,ECT2,77.26459503173828,protein coding
+B cells,4,ZNF654,68.73533630371094,protein coding
+B cells,5,CPA3,64.59138488769531,protein coding
+B cells,6,LRCH3,64.52278137207031,protein coding
+B cells,7,CGGBP1,62.321067810058594,protein coding
+B cells,8,PPP4R2,62.080753326416016,protein coding
+B cells,9,DBR1,56.9876708984375,protein coding
+B cells,10,DNAJC13,54.00666427612305,protein coding
+B cells,11,SS18L2,53.493279139200844,protein coding
+B cells,12,IGF2BP2,49.52608871459961,protein coding
+B cells,13,EAF2,48.177066802978516,protein coding
+B cells,14,BDH1,47.58818054199219,protein coding
+B cells,15,EIF5A2,39.03792953491211,protein coding
+B cells,16,PSMD6,38.148868560791016,protein coding
+B cells,17,SIAH2,38.10897445678711,protein coding
+B cells,18,ZNF35,38.01036389668783,protein coding
+B cells,19,CSTA,37.26316833496094,protein coding
+B cells,20,RAD54L2,36.39956537882487,protein coding
+B cells,21,STK25,36.08703740437826,protein coding
+B cells,22,POLR2H,35.498321533203125,protein coding
+B cells,23,PCNP,35.1569938659668,protein coding
+B cells,24,INPP1,34.74969466527303,protein coding
+B cells,25,TOP2B,34.246556878089905,protein coding
+B cells,26,NEK4,33.84438133239746,protein coding
+B cells,27,EIF2B5,33.02067947387695,protein coding
+B cells,28,GSK3B,32.18024444580078,protein coding
+B cells,29,CYB561D2,31.862332979838055,protein coding
+B cells,30,VIPR1,31.47366205851237,protein coding
+B cells,31,CRBN,30.869850158691406,protein coding
+B cells,32,PSMD2,30.18866539001465,protein coding
+B cells,33,IFT57,29.185588836669922,protein coding
+B cells,34,ZNF141,27.76041603088379,protein coding
+B cells,35,IMPDH2,27.47200886408488,protein coding
+B cells,36,WNT7A,27.37244160970052,protein coding
+B cells,37,TACC3,27.363161087036133,protein coding
+B cells,38,MYNN,27.266826629638672,protein coding
+B cells,39,PCBP4,27.04813512166341,protein coding
+B cells,40,CACNA2D3,27.001577377319336,protein coding
+B cells,41,GBE1,26.95443344116211,protein coding
+B cells,42,CX3CR1,26.911651293436687,protein coding
+B cells,43,AGPS,26.41884191830953,protein coding
+B cells,44,BAP1,26.149599075317383,protein coding
+B cells,45,PFN2,25.389829635620117,protein coding
+B cells,46,ATP1B3,25.234071731567383,protein coding
+B cells,47,GTF3C3,24.817325115203857,protein coding
+B cells,48,CD96,24.599443435668945,protein coding
+B cells,49,TOPBP1,23.048799514770508,protein coding
+B cells,50,TRAT1,22.528118133544922,protein coding
+B cells,51,PIGG,22.410057067871094,protein coding
+B cells,52,LXN,22.160938262939453,protein coding
+B cells,53,SLC35F5,21.666092342800564,protein coding
+B cells,54,NISCH,21.535197257995605,protein coding
+B cells,55,GPR35,20.92933201789856,protein coding
+B cells,56,IL18RAP,20.42234006192949,protein coding
+B cells,57,PSMD14,19.939889362880162,protein coding
+B cells,58,RBM15B,19.687085151672363,protein coding
+B cells,59,CTDSP1,19.24016046524048,protein coding
+B cells,60,PMS1,18.796425382296245,protein coding
+B cells,61,NCL,18.13188600540161,protein coding
+B cells,62,UQCRC1,18.0997953414917,protein coding
+B cells,63,SSR3,17.60567855834961,protein coding
+B cells,64,CNBP,17.172115325927734,protein coding
+B cells,65,ARL8B,16.369847615559895,protein coding
+B cells,66,STK16,16.067640900611877,protein coding
+B cells,67,AUP1,15.892652389407157,protein coding
+B cells,68,SCAP,15.872112274169922,protein coding
+B cells,69,FAIM,15.592119216918945,protein coding
+B cells,70,PARP3,15.406465530395508,protein coding
+B cells,71,APEH,15.155242284138998,protein coding
+B cells,72,VRK2,15.08412410204227,protein coding
+B cells,73,USP19,14.9396603902181,protein coding
+B cells,74,NT5DC2,14.285669326782227,protein coding
+B cells,75,GCA,14.264846120561872,protein coding
+B cells,76,OXSR1,13.957109769185385,protein coding
+B cells,77,CRELD1,13.712711691856384,protein coding
+B cells,78,FYCO1,13.649348139762878,protein coding
+B cells,79,DUSP11,13.497903542859214,protein coding
+B cells,80,PODXL2,13.364672660827637,protein coding
+B cells,81,RAF1,13.054412841796875,protein coding
+B cells,82,GORASP1,12.76800545056661,protein coding
+B cells,83,SIDT1,12.674262046813965,protein coding
+B cells,84,LY75,12.64376449584961,protein coding
+B cells,85,FARP2,12.393958330154419,protein coding
+B cells,86,ST3GAL5,12.367151470745311,protein coding
+B cells,87,ZNF197,12.337732950846354,protein coding
+B cells,88,CCDC71,11.752946774164835,protein coding
+B cells,89,CCL20,11.75240969657898,protein coding
+B cells,90,INSIG2,11.531313940882683,protein coding
+B cells,91,METTL8,11.48663718359811,protein coding
+B cells,92,DGKD,11.355913758277893,protein coding
+B cells,93,EPM2AIP1,11.343546549479166,protein coding
+B cells,94,DYNC1LI1,11.316710472106934,protein coding
+B cells,95,TMEM131,10.862434723160483,protein coding
+B cells,96,MRPS22,10.818788528442383,protein coding
+B cells,97,SLC4A10,10.804106593132019,protein coding
+B cells,98,BAZ2B,10.786458935056414,protein coding
+B cells,99,GCC2,10.742205831739637,protein coding
+B cells,100,CLASP1,10.660414576530457,protein coding
+CD4 T cells,1,SH3TC2,86.03944396972656,protein coding
+CD4 T cells,2,PTCD2,79.39945602416992,protein coding
+CD4 T cells,3,NSD1,77.26502990722656,protein coding
+CD4 T cells,4,SLC25A46,73.38004493713379,protein coding
+CD4 T cells,5,C5orf15,65.35369873046875,protein coding
+CD4 T cells,6,ADRB2,65.04019165039062,protein coding
+CD4 T cells,7,C6orf47,64.5223388671875,protein coding
+CD4 T cells,8,FAM53C,56.9884033203125,protein coding
+CD4 T cells,9,TTC1,53.03355026245117,protein coding
+CD4 T cells,10,ANKRA2,52.062217712402344,protein coding
+CD4 T cells,11,THG1L,48.86526870727539,protein coding
+CD4 T cells,12,LTB,47.58803939819336,protein coding
+CD4 T cells,13,TRIM26,45.56117630004883,protein coding
+CD4 T cells,14,LTA,44.717796325683594,protein coding
+CD4 T cells,15,MYLIP,44.66328430175781,protein coding
+CD4 T cells,16,MICB,40.97927474975586,protein coding
+CD4 T cells,17,HK3,39.03838348388672,protein coding
+CD4 T cells,18,CSF1R,38.10887145996094,protein coding
+CD4 T cells,19,ZNF184,35.498836517333984,protein coding
+CD4 T cells,20,PSMB9,34.79289627075195,protein coding
+CD4 T cells,21,MGAT4B,33.3479118347168,protein coding
+CD4 T cells,22,RIPK1,33.020931243896484,protein coding
+CD4 T cells,23,ATOX1,30.221466064453125,protein coding
+CD4 T cells,24,NUP153,30.188922882080078,protein coding
+CD4 T cells,25,CD83,30.185606002807617,protein coding
+CD4 T cells,26,PFDN1,30.090919494628906,protein coding
+CD4 T cells,27,MRPS27,29.0558922290802,protein coding
+CD4 T cells,28,MTMR12,28.869709968566895,protein coding
+CD4 T cells,29,ST8SIA4,28.619468688964844,protein coding
+CD4 T cells,30,CBR4,27.943597316741943,protein coding
+CD4 T cells,31,CLIC1,27.760786056518555,protein coding
+CD4 T cells,32,HEXB,27.719401359558105,protein coding
+CD4 T cells,33,CCNL1,27.65901010686701,protein coding
+CD4 T cells,34,TMEM165,27.516199384416854,protein coding
+CD4 T cells,35,TAP1,27.36292266845703,protein coding
+CD4 T cells,36,UIMC1,27.169397354125977,protein coding
+CD4 T cells,37,EREG,26.576890683174135,protein coding
+CD4 T cells,38,PLK2,26.442360877990723,protein coding
+CD4 T cells,39,SERINC5,26.356759071350098,protein coding
+CD4 T cells,40,RBM22,26.333398818969727,protein coding
+CD4 T cells,41,SLC26A2,25.390207290649414,protein coding
+CD4 T cells,42,TCERG1,25.234386444091797,protein coding
+CD4 T cells,43,SLC30A9,23.816280603408813,protein coding
+CD4 T cells,44,DUSP22,23.791391372680664,protein coding
+CD4 T cells,45,SENP2,23.23320370912552,protein coding
+CD4 T cells,46,MED28,23.133919894695282,protein coding
+CD4 T cells,47,IRF2,23.06535631418228,protein coding
+CD4 T cells,48,SEC61A1,22.568614951201848,protein coding
+CD4 T cells,49,DOCK2,22.16120147705078,protein coding
+CD4 T cells,50,DCP2,21.86096727848053,protein coding
+CD4 T cells,51,ABCC5,21.557567644119263,protein coding
+CD4 T cells,52,SPRY1,20.86932635307312,protein coding
+CD4 T cells,53,ZMAT3,20.78345079421997,protein coding
+CD4 T cells,54,SRP19,20.30271339416504,protein coding
+CD4 T cells,55,NUP155,20.069090843200684,protein coding
+CD4 T cells,56,TACC3,19.780320674180984,protein coding
+CD4 T cells,57,KIF13A,19.48204803466797,protein coding
+CD4 T cells,58,SULT1B1,19.42133680979411,protein coding
+CD4 T cells,59,TMEM156,18.167643167078495,protein coding
+CD4 T cells,60,EIF1B,18.155146530696324,protein coding
+CD4 T cells,61,FBXW7,18.114832878112793,protein coding
+CD4 T cells,62,CCNB1,17.668734073638916,protein coding
+CD4 T cells,63,PLCD1,17.533069497063046,protein coding
+CD4 T cells,64,AFF4,17.172473907470703,protein coding
+CD4 T cells,65,LAP3,16.8025094717741,protein coding
+CD4 T cells,66,CEP70,16.777875918608444,protein coding
+CD4 T cells,67,HTR1F,16.71401859732235,protein coding
+CD4 T cells,68,SDHA,16.62185827891032,protein coding
+CD4 T cells,69,ARSB,16.61869168281555,protein coding
+CD4 T cells,70,DAP,16.013418833414715,protein coding
+CD4 T cells,71,OXSR1,15.806260177067347,protein coding
+CD4 T cells,72,DNAJB14,15.785809516906738,protein coding
+CD4 T cells,73,TXK,15.763395581926618,protein coding
+CD4 T cells,74,FAIM,15.733842556293194,protein coding
+CD4 T cells,75,CD14,15.592228889465332,protein coding
+CD4 T cells,76,CXCL2,15.383502006530762,protein coding
+CD4 T cells,77,GNL1,15.188851356506348,protein coding
+CD4 T cells,78,DEK,15.137864112854004,protein coding
+CD4 T cells,79,DMXL1,15.077597379684448,protein coding
+CD4 T cells,80,HSD17B11,14.468254852294923,protein coding
+CD4 T cells,81,COPS4,14.43717975616455,protein coding
+CD4 T cells,82,EIF5A2,14.324370288848877,protein coding
+CD4 T cells,83,IRF1,14.265856564044952,protein coding
+CD4 T cells,84,SLC25A38,14.21428522609529,protein coding
+CD4 T cells,85,MANBA,13.99153003692627,protein coding
+CD4 T cells,86,CETN3,13.93168020248413,protein coding
+CD4 T cells,87,PDGFC,13.746097326278687,protein coding
+CD4 T cells,88,ZNF141,13.707635223865509,protein coding
+CD4 T cells,89,PRKRA,13.641622866903033,protein coding
+CD4 T cells,90,GZMA,13.630247910817465,protein coding
+CD4 T cells,91,HLA-DMA,13.093836784362793,protein coding
+CD4 T cells,92,IMPDH2,12.997854540745417,protein coding
+CD4 T cells,93,MAP9,12.700563430786133,protein coding
+CD4 T cells,94,IGF2BP2,12.588808298110962,protein coding
+CD4 T cells,95,EXOSC9,12.558042228221893,protein coding
+CD4 T cells,96,AP2M1,12.548250603675843,protein coding
+CD4 T cells,97,PSMD6,12.525983166168718,protein coding
+CD4 T cells,98,ARL8B,12.46884134080675,protein coding
+CD4 T cells,99,RPL26L1,12.31013298034668,protein coding
+CD4 T cells,100,SATB1,12.28218779961268,protein coding
+CD8 T cells,1,ARL8B,90.06391906738281,protein coding
+CD8 T cells,2,LSM3,64.52223205566406,protein coding
+CD8 T cells,3,TMEM40,61.829891204833984,protein coding
+CD8 T cells,4,XPC,47.58774948120117,protein coding
+CD8 T cells,5,EPHA4,45.22142791748047,protein coding
+CD8 T cells,6,VHL,44.663299560546875,protein coding
+CD8 T cells,7,RPL32,40.9780158996582,protein coding
+CD8 T cells,8,CHPF,39.066969871520996,protein coding
+CD8 T cells,9,ATG16L1,39.03816604614258,protein coding
+CD8 T cells,10,RNPEPL1,33.347896575927734,protein coding
+CD8 T cells,11,HAT1,33.31482256542552,protein coding
+CD8 T cells,12,TATDN2,30.189016342163086,protein coding
+CD8 T cells,13,CRELD1,30.18577003479004,protein coding
+CD8 T cells,14,RPE,28.636749923229218,protein coding
+CD8 T cells,15,AZI2,27.363040924072266,protein coding
+CD8 T cells,16,CTLA4,24.01446194201708,protein coding
+CD8 T cells,17,AAMP,23.953001856803894,protein coding
+CD8 T cells,18,PRKRA,23.839051299624973,protein coding
+CD8 T cells,19,ANKRD28,22.41008758544922,protein coding
+CD8 T cells,20,TRIP12,22.161109924316406,protein coding
+CD8 T cells,21,SMARCAL1,21.729278405507404,protein coding
+CD8 T cells,22,MREG,20.785769121987478,protein coding
+CD8 T cells,23,SCRN3,18.759901827031914,protein coding
+CD8 T cells,24,CLASP1,15.744723933083671,protein coding
+CD8 T cells,25,ATG7,15.188811302185059,protein coding
+CD8 T cells,26,KLF7,15.080461502075195,protein coding
+CD8 T cells,27,FARP2,14.736011505126953,protein coding
+CD8 T cells,28,SETD5,13.550045013427734,protein coding
+CD8 T cells,29,COPS7B,13.473669052124023,protein coding
+CD8 T cells,30,TTN,12.947776158650717,protein coding
+CD8 T cells,31,CAB39,12.310222625732422,protein coding
+CD8 T cells,32,SP3,12.205988493832676,protein coding
+CD8 T cells,33,CD8A,12.164587076633207,protein coding
+CD8 T cells,34,GMPPA,11.584922075271606,protein coding
+CD8 T cells,35,FOXN2,11.32490590569519,protein coding
+CD8 T cells,36,PLCH2,11.104167650006094,protein coding
+CD8 T cells,37,CTDSP1,10.915229280789694,protein coding
+CD8 T cells,38,BAZ2B,10.15147811571757,protein coding
+CD8 T cells,39,ATIC,10.145486414432526,protein coding
+CD8 T cells,40,PANK4,9.730307801405369,protein coding
+CD8 T cells,41,TNFRSF1B,9.434916878541037,protein coding
+CD8 T cells,42,EFHD2,9.339953144405099,protein coding
+CD8 T cells,43,PLEKHM2,8.837359542634276,protein coding
+CD8 T cells,44,ZNF804A,8.645250532362196,protein coding
+CD8 T cells,45,ACVR1,8.594725815455119,protein coding
+CD8 T cells,46,ANKZF1,8.418367147445679,protein coding
+CD8 T cells,47,MRPL19,8.045289793983102,protein coding
+CD8 T cells,48,FASTKD1,7.9380818880521336,protein coding
+CD8 T cells,49,MTMR14,7.818360328674316,protein coding
+CD8 T cells,50,CHML,7.8025458021597425,protein coding
+CD8 T cells,51,DHRS3,7.742838135349323,protein coding
+CD8 T cells,52,INSIG2,7.622619477185336,protein coding
+CD8 T cells,53,GCA,7.596605046590169,protein coding
+CD8 T cells,54,ATP13A2,7.5416392671428,protein coding
+CD8 T cells,55,WDR12,7.53907784819603,protein coding
+CD8 T cells,56,NECAP2,7.280036118951785,protein coding
+CD8 T cells,57,LY75,7.119895172119141,protein coding
+CD8 T cells,58,TNFRSF8,6.984253586017789,protein coding
+CD8 T cells,59,AUP1,6.836341917514801,protein coding
+CD8 T cells,60,UXS1,6.762807911092585,protein coding
+CD8 T cells,61,CYP20A1,6.648965001106262,protein coding
+CD8 T cells,62,SNX17,6.503753108136794,protein coding
+CD8 T cells,63,SLC35F5,6.2690656158057125,protein coding
+CD8 T cells,64,IL18RAP,6.14650022983551,protein coding
+CD8 T cells,65,SSBP3,6.098014585164411,protein coding
+CD8 T cells,66,SCN9A,6.046723314693996,protein coding
+CD8 T cells,67,CAPG,6.01625726185739,protein coding
+CD8 T cells,68,PLOD1,5.9656163034600445,protein coding
+CD8 T cells,69,IPP,5.9310520765016586,protein coding
+CD8 T cells,70,PRDX1,5.930639426316551,protein coding
+CD8 T cells,71,THUMPD2,5.868661707223848,protein coding
+CD8 T cells,72,EDEM1,5.822198390960693,protein coding
+CD8 T cells,73,HOOK1,5.811999445081334,protein coding
+CD8 T cells,74,SH3YL1,5.67793775859632,protein coding
+CD8 T cells,75,WNT7A,5.67405366897583,protein coding
+CD8 T cells,76,HECTD3,5.537575230866835,protein coding
+CD8 T cells,77,COG2,5.431435265587371,protein coding
+CD8 T cells,78,POMGNT1,5.382287914700065,protein coding
+CD8 T cells,79,MBD5,5.265642054875692,protein coding
+CD8 T cells,80,UNC50,5.251414284110069,protein coding
+CD8 T cells,81,TMEM59,5.2156571713199025,protein coding
+CD8 T cells,82,PCBP1,5.1949322553057415,protein coding
+CD8 T cells,83,ECHDC2,5.124059340355722,protein coding
+CD8 T cells,84,L1TD1,5.1026648471944895,protein coding
+CD8 T cells,85,RNF11,5.093793747267424,protein coding
+CD8 T cells,86,ODC1,5.080225817754235,protein coding
+CD8 T cells,87,RPS6KC1,5.0525671275223,protein coding
+CD8 T cells,88,ARHGEF10L,5.039320467873502,protein coding
+CD8 T cells,89,TTC31,4.995230350643396,protein coding
+CD8 T cells,90,SRP9,4.9540297704935075,protein coding
+CD8 T cells,91,PADI2,4.944593499646167,protein coding
+CD8 T cells,92,ASXL2,4.904880331372315,protein coding
+CD8 T cells,93,GYPC,4.896470296382904,protein coding
+CD8 T cells,94,TNFRSF14,4.889186826776404,protein coding
+CD8 T cells,95,BCS1L,4.836451888084412,protein coding
+CD8 T cells,96,LRRC42,4.835528339526888,protein coding
+CD8 T cells,97,CDA,4.814982682548834,protein coding
+CD8 T cells,98,GPX7,4.782182257535008,protein coding
+CD8 T cells,99,FPGT,4.763113241817658,protein coding
+CD8 T cells,100,JAK1,4.701986426513292,protein coding
+CD14+ Monocytes,1,CHST2,98.58119201660156,protein coding
+CD14+ Monocytes,2,PCNP,65.04008483886719,protein coding
+CD14+ Monocytes,3,HLTF,64.52229309082031,protein coding
+CD14+ Monocytes,4,IFRD2,62.04507064819336,protein coding
+CD14+ Monocytes,5,ZBTB38,61.83026123046875,protein coding
+CD14+ Monocytes,6,ZNF654,56.98832702636719,protein coding
+CD14+ Monocytes,7,ZXDC,56.76390838623047,protein coding
+CD14+ Monocytes,8,THOC7,54.00701904296875,protein coding
+CD14+ Monocytes,9,ACTR8,50.25129318237305,protein coding
+CD14+ Monocytes,10,GNAI2,49.460652351379395,protein coding
+CD14+ Monocytes,11,SENP7,49.026817321777344,protein coding
+CD14+ Monocytes,12,CPA3,47.588130950927734,protein coding
+CD14+ Monocytes,13,ARL8B,46.020180543263756,protein coding
+CD14+ Monocytes,14,RASA2,40.978389739990234,protein coding
+CD14+ Monocytes,15,ILKAP,40.38309895992279,protein coding
+CD14+ Monocytes,16,OSBPL11,39.887638092041016,protein coding
+CD14+ Monocytes,17,NR1D2,36.537408192952476,protein coding
+CD14+ Monocytes,18,UQCRC1,33.83228874206543,protein coding
+CD14+ Monocytes,19,SLC41A3,33.34789276123047,protein coding
+CD14+ Monocytes,20,RUVBL1,33.0212287902832,protein coding
+CD14+ Monocytes,21,GSK3B,32.84308624267578,protein coding
+CD14+ Monocytes,22,NBEAL2,32.76424312591553,protein coding
+CD14+ Monocytes,23,RNPEPL1,32.14650022983551,protein coding
+CD14+ Monocytes,24,EPM2AIP1,30.97948980331421,protein coding
+CD14+ Monocytes,25,SMARCAL1,30.492309297834122,protein coding
+CD14+ Monocytes,26,SRPRB,30.189289093017578,protein coding
+CD14+ Monocytes,27,TOPBP1,30.185361862182617,protein coding
+CD14+ Monocytes,28,SLC25A20,30.007678031921387,protein coding
+CD14+ Monocytes,29,EDEM1,29.117082198460896,protein coding
+CD14+ Monocytes,30,SIAH2,27.761117935180664,protein coding
+CD14+ Monocytes,31,AAMP,27.65518808364868,protein coding
+CD14+ Monocytes,32,RBM6,27.607372999191284,protein coding
+CD14+ Monocytes,33,GMPS,27.363269805908203,protein coding
+CD14+ Monocytes,34,NCL,26.935647773742676,protein coding
+CD14+ Monocytes,35,IFT57,25.3905029296875,protein coding
+CD14+ Monocytes,36,NISCH,25.178829193115234,protein coding
+CD14+ Monocytes,37,DHRS9,23.63286018371582,protein coding
+CD14+ Monocytes,38,MITF,23.0494384765625,protein coding
+CD14+ Monocytes,39,VIPR1,23.046180089314777,protein coding
+CD14+ Monocytes,40,CSTA,22.742795944213867,protein coding
+CD14+ Monocytes,41,GPR171,22.410404205322266,protein coding
+CD14+ Monocytes,42,TMEM39A,22.16147804260254,protein coding
+CD14+ Monocytes,43,RRP9,21.943893432617188,protein coding
+CD14+ Monocytes,44,XPC,21.82469129562378,protein coding
+CD14+ Monocytes,45,CTNNB1,21.63350709279378,protein coding
+CD14+ Monocytes,46,HDAC4,21.00259178876877,protein coding
+CD14+ Monocytes,47,ITM2C,20.325252532958984,protein coding
+CD14+ Monocytes,48,SEC61A1,19.752880096435547,protein coding
+CD14+ Monocytes,49,MTX2,19.210851951078936,protein coding
+CD14+ Monocytes,50,BAP1,18.327627182006836,protein coding
+CD14+ Monocytes,51,GPX1,18.00546646118164,protein coding
+CD14+ Monocytes,52,CLK1,17.672411772939896,protein coding
+CD14+ Monocytes,53,ABHD10,17.60575294494629,protein coding
+CD14+ Monocytes,54,NIF3L1,16.8087289068434,protein coding
+CD14+ Monocytes,55,UXS1,16.010986265726388,protein coding
+CD14+ Monocytes,56,DYNC1LI1,15.868063608805338,protein coding
+CD14+ Monocytes,57,CPOX,15.592569351196289,protein coding
+CD14+ Monocytes,58,NME6,15.519045054912567,protein coding
+CD14+ Monocytes,59,STK39,15.24430545171102,protein coding
+CD14+ Monocytes,60,LY75,15.23334940742044,protein coding
+CD14+ Monocytes,61,DBR1,15.189194679260254,protein coding
+CD14+ Monocytes,62,TMEM40,14.898288448651632,protein coding
+CD14+ Monocytes,63,NEK4,14.70102310180664,protein coding
+CD14+ Monocytes,64,SLC4A10,14.348780204268063,protein coding
+CD14+ Monocytes,65,CAMK1,13.625219682852427,protein coding
+CD14+ Monocytes,66,CNBP,13.55036735534668,protein coding
+CD14+ Monocytes,67,RASSF1,13.13211441040039,protein coding
+CD14+ Monocytes,68,SSR3,13.094165802001953,protein coding
+CD14+ Monocytes,69,SP3,13.045756119948168,protein coding
+CD14+ Monocytes,70,CISH,12.57685899734497,protein coding
+CD14+ Monocytes,71,MBD5,12.414942120250902,protein coding
+CD14+ Monocytes,72,GTF2E1,12.31056022644043,protein coding
+CD14+ Monocytes,73,CAB39,12.211124849319457,protein coding
+CD14+ Monocytes,74,ATG7,12.107686996459961,protein coding
+CD14+ Monocytes,75,PTCD3,11.941181741378925,protein coding
+CD14+ Monocytes,76,HTR1F,11.897554397583008,protein coding
+CD14+ Monocytes,77,RAD54L2,11.772365987300873,protein coding
+CD14+ Monocytes,78,PLCH2,11.542916836682917,protein coding
+CD14+ Monocytes,79,PECR,11.523619719914027,protein coding
+CD14+ Monocytes,80,VPS54,11.460067387966983,protein coding
+CD14+ Monocytes,81,SLC20A1,11.435366261389948,protein coding
+CD14+ Monocytes,82,REV1,11.360935427925803,protein coding
+CD14+ Monocytes,83,WDR12,11.298173162672255,protein coding
+CD14+ Monocytes,84,MRPL35,10.995006281595964,protein coding
+CD14+ Monocytes,85,GYPC,10.897190604891096,protein coding
+CD14+ Monocytes,86,NIT2,10.819567680358887,protein coding
+CD14+ Monocytes,87,CMTM6,10.796892166137695,protein coding
+CD14+ Monocytes,88,WDR6,10.600675582885742,protein coding
+CD14+ Monocytes,89,RNF103,10.346090307235718,protein coding
+CD14+ Monocytes,90,MYD88,9.981833457946777,protein coding
+CD14+ Monocytes,91,EPHA4,9.748063468933106,protein coding
+CD14+ Monocytes,92,CYBRD1,9.662180868784587,protein coding
+CD14+ Monocytes,93,ATIC,9.422506877354213,protein coding
+CD14+ Monocytes,94,ACVR1,9.293263968299417,protein coding
+CD14+ Monocytes,95,CTDSP1,8.867887139320374,protein coding
+CD14+ Monocytes,96,MRPL44,8.844102144241333,protein coding
+CD14+ Monocytes,97,FOXN2,8.653668295253407,protein coding
+CD14+ Monocytes,98,ACTR1B,8.581436869345213,protein coding
+CD14+ Monocytes,99,C1D,8.290323943735283,protein coding
+CD14+ Monocytes,100,SETD5,8.277989387512207,protein coding
+Dendritic Cells,1,FEM1C,98.58209228515625,protein coding
+Dendritic Cells,2,IQGAP2,90.0631332397461,protein coding
+Dendritic Cells,3,FBXO4,77.26424407958984,protein coding
+Dendritic Cells,4,CASP3,65.04011535644531,protein coding
+Dendritic Cells,5,COPS4,60.857808430989586,protein coding
+Dendritic Cells,6,MAP3K1,56.76346206665039,protein coding
+Dendritic Cells,7,ANAPC10,54.00666427612305,protein coding
+Dendritic Cells,8,C5orf22,53.0331916809082,protein coding
+Dendritic Cells,9,BASP1,48.86522674560547,protein coding
+Dendritic Cells,10,SNX24,47.58775329589844,protein coding
+Dendritic Cells,11,PLAC8,45.75169245402018,protein coding
+Dendritic Cells,12,COMMD10,44.71754837036133,protein coding
+Dendritic Cells,13,MCTP1,44.66328811645508,protein coding
+Dendritic Cells,14,HSD17B4,42.94977951049805,protein coding
+Dendritic Cells,15,CCNB1,39.98978805541992,protein coding
+Dendritic Cells,16,GZMK,39.8878173828125,protein coding
+Dendritic Cells,17,EXOC3,38.1085205078125,protein coding
+Dendritic Cells,18,TTC33,36.0908317565918,protein coding
+Dendritic Cells,19,RIOK2,35.4981803894043,protein coding
+Dendritic Cells,20,KIF3A,34.79255294799805,protein coding
+Dendritic Cells,21,DHX29,33.3475456237793,protein coding
+Dendritic Cells,22,F2R,33.02083206176758,protein coding
+Dendritic Cells,23,BANK1,32.617499907811485,protein coding
+Dendritic Cells,24,CCT5,30.22191047668457,protein coding
+Dendritic Cells,25,CTSO,30.090553283691406,protein coding
+Dendritic Cells,26,NFKB1,29.218286514282227,protein coding
+Dendritic Cells,27,CXCL10,28.5567569732666,protein coding
+Dendritic Cells,28,UQCRQ,27.36244773864746,protein coding
+Dendritic Cells,29,GSTCD,27.314856847127277,protein coding
+Dendritic Cells,30,SDHA,25.389846801757812,protein coding
+Dendritic Cells,31,ARHGAP10,23.04874038696289,protein coding
+Dendritic Cells,32,PDE6B,22.99276795170524,protein coding
+Dendritic Cells,33,LMNB1,22.409704208374023,protein coding
+Dendritic Cells,34,IL7R,22.16110610961914,protein coding
+Dendritic Cells,35,GALNT7,20.72994041442871,protein coding
+Dendritic Cells,36,QDPR,19.958807349205017,protein coding
+Dendritic Cells,37,GCNT4,19.752517700195312,protein coding
+Dendritic Cells,38,COQ2,19.430768966674805,protein coding
+Dendritic Cells,39,TNFRSF14,18.58919112063439,protein coding
+Dendritic Cells,40,MANBA,17.764634132385254,protein coding
+Dendritic Cells,41,MRFAP1L1,17.658779991997612,protein coding
+Dendritic Cells,42,TXK,17.637039947509766,protein coding
+Dendritic Cells,43,ANKH,17.60537338256836,protein coding
+Dendritic Cells,44,NUDT9,17.356482823689777,protein coding
+Dendritic Cells,45,HERC5,17.314669291178387,protein coding
+Dendritic Cells,46,NDUFC1,17.172155380249023,protein coding
+Dendritic Cells,47,INTS12,16.84809748331706,protein coding
+Dendritic Cells,48,PANK4,16.473604844383082,protein coding
+Dendritic Cells,49,MAD2L1,16.430252075195312,protein coding
+Dendritic Cells,50,DCK,16.4152930577596,protein coding
+Dendritic Cells,51,SLC30A9,15.81172513961792,protein coding
+Dendritic Cells,52,S100P,15.694684823354086,protein coding
+Dendritic Cells,53,PDGFC,15.591854095458984,protein coding
+Dendritic Cells,54,ALPK1,15.400718212127686,protein coding
+Dendritic Cells,55,DGKQ,15.363192970102483,protein coding
+Dendritic Cells,56,DNAJB14,15.002575874328613,protein coding
+Dendritic Cells,57,IGF2BP2,14.995352864265442,protein coding
+Dendritic Cells,58,CD180,14.735607147216797,protein coding
+Dendritic Cells,59,USP13,14.712845504283905,protein coding
+Dendritic Cells,60,C1orf174,14.409607577112924,protein coding
+Dendritic Cells,61,PF4,14.180271784464518,protein coding
+Dendritic Cells,62,RASA2,13.959617243363308,protein coding
+Dendritic Cells,63,ARSB,13.549623489379883,protein coding
+Dendritic Cells,64,AFF4,13.093802452087402,protein coding
+Dendritic Cells,65,POLR2B,12.456036249796549,protein coding
+Dendritic Cells,66,P2RY14,12.3817966679732,protein coding
+Dendritic Cells,67,GMPS,12.354941646258036,protein coding
+Dendritic Cells,68,WDR70,12.309854507446289,protein coding
+Dendritic Cells,69,PPBP,11.914708455403646,protein coding
+Dendritic Cells,70,TLR2,11.897494316101074,protein coding
+Dendritic Cells,71,PSMD6,11.754169197577351,protein coding
+Dendritic Cells,72,ZMAT3,11.69665914773941,protein coding
+Dendritic Cells,73,IQCG,11.552419461987235,protein coding
+Dendritic Cells,74,CEP70,11.316692561938845,protein coding
+Dendritic Cells,75,NIT2,11.248120316050269,protein coding
+Dendritic Cells,76,CLSTN1,11.112300852407044,protein coding
+Dendritic Cells,77,CTNNBIP1,11.079677962623867,protein coding
+Dendritic Cells,78,STX18,10.827583919871937,protein coding
+Dendritic Cells,79,KLHL2,10.819230079650879,protein coding
+Dendritic Cells,80,PTPN13,10.733081817626953,protein coding
+Dendritic Cells,81,PLCH2,10.606735690856754,protein coding
+Dendritic Cells,82,ABHD10,10.582592391386264,protein coding
+Dendritic Cells,83,DNAJC13,10.161367477973302,protein coding
+Dendritic Cells,84,TRIP13,9.942480087280273,protein coding
+Dendritic Cells,85,SPSB1,9.890659586166562,protein coding
+Dendritic Cells,86,RPL9,9.815504312515259,protein coding
+Dendritic Cells,87,COMMD8,9.77617597579956,protein coding
+Dendritic Cells,88,ZBTB48,9.596776640169036,protein coding
+Dendritic Cells,89,CYTL1,9.56550897251476,protein coding
+Dendritic Cells,90,BDH2,9.564832051595053,protein coding
+Dendritic Cells,91,PIGG,9.36846982349049,protein coding
+Dendritic Cells,92,SLC25A20,9.28440385277026,protein coding
+Dendritic Cells,93,CISH,9.136631031597362,protein coding
+Dendritic Cells,94,ABCC5,9.009891944272178,protein coding
+Dendritic Cells,95,BST1,9.000537186861038,protein coding
+Dendritic Cells,96,LRRC47,8.909400751457103,protein coding
+Dendritic Cells,97,PFN2,8.319403408716122,protein coding
+Dendritic Cells,98,P2RY13,8.233607083559036,protein coding
+Dendritic Cells,99,DFFA,8.218196500191647,protein coding
+Dendritic Cells,100,VPS8,8.209152460098267,protein coding
+FCGR3A+ Monocytes,1,ECT2,98.58142852783203,protein coding
+FCGR3A+ Monocytes,2,CPA3,90.06375885009766,protein coding
+FCGR3A+ Monocytes,3,ZNF639,64.5224609375,protein coding
+FCGR3A+ Monocytes,4,TWF2,57.20247014363607,protein coding
+FCGR3A+ Monocytes,5,CNBP,56.027278423309326,protein coding
+FCGR3A+ Monocytes,6,ZMAT3,47.587806701660156,protein coding
+FCGR3A+ Monocytes,7,P2RY14,44.66328811645508,protein coding
+FCGR3A+ Monocytes,8,TBL1XR1,42.9498176574707,protein coding
+FCGR3A+ Monocytes,9,RUVBL1,41.99536991119385,protein coding
+FCGR3A+ Monocytes,10,NMD3,40.97836685180664,protein coding
+FCGR3A+ Monocytes,11,TIPARP,35.49883270263672,protein coding
+FCGR3A+ Monocytes,12,CD96,35.23417091369629,protein coding
+FCGR3A+ Monocytes,13,ASTE1,35.16533374786377,protein coding
+FCGR3A+ Monocytes,14,HLTF,33.02074432373047,protein coding
+FCGR3A+ Monocytes,15,RRP9,32.37636625766754,protein coding
+FCGR3A+ Monocytes,16,SRPRB,31.148669242858887,protein coding
+FCGR3A+ Monocytes,17,GMPS,30.188989639282227,protein coding
+FCGR3A+ Monocytes,18,ACTL6A,27.362945556640625,protein coding
+FCGR3A+ Monocytes,19,RASSF1,26.875844764709473,protein coding
+FCGR3A+ Monocytes,20,MRPL3,26.755840301513672,protein coding
+FCGR3A+ Monocytes,21,SLC35A5,25.469128608703613,protein coding
+FCGR3A+ Monocytes,22,TCTA,25.452614625295002,protein coding
+FCGR3A+ Monocytes,23,NME6,23.75700542661879,protein coding
+FCGR3A+ Monocytes,24,GORASP1,20.53638834953308,protein coding
+FCGR3A+ Monocytes,25,QRICH1,18.793940544128418,protein coding
+FCGR3A+ Monocytes,26,CCDC51,18.716022059321404,protein coding
+FCGR3A+ Monocytes,27,RBM15B,18.528121948242188,protein coding
+FCGR3A+ Monocytes,28,GTF2E1,18.039450963338215,protein coding
+FCGR3A+ Monocytes,29,GNAI2,17.647646927833556,protein coding
+FCGR3A+ Monocytes,30,CISH,16.9806866645813,protein coding
+FCGR3A+ Monocytes,31,CCDC71,16.295818328857422,protein coding
+FCGR3A+ Monocytes,32,THOC7,16.25100104014079,protein coding
+FCGR3A+ Monocytes,33,TMEM39A,16.12014897664388,protein coding
+FCGR3A+ Monocytes,34,MYD88,16.101433038711548,protein coding
+FCGR3A+ Monocytes,35,CTNNB1,15.601720118522644,protein coding
+FCGR3A+ Monocytes,36,SFMBT1,15.40913454691569,protein coding
+FCGR3A+ Monocytes,37,SSR3,15.137829780578613,protein coding
+FCGR3A+ Monocytes,38,PECR,15.118244989713032,protein coding
+FCGR3A+ Monocytes,39,C3orf14,14.45556386311849,protein coding
+FCGR3A+ Monocytes,40,STK25,13.664199407284077,protein coding
+FCGR3A+ Monocytes,41,DPPA4,13.263731638590494,protein coding
+FCGR3A+ Monocytes,42,ZBTB11,13.187113841374716,protein coding
+FCGR3A+ Monocytes,43,DYNC1LI1,12.967132329940796,protein coding
+FCGR3A+ Monocytes,44,WDR6,12.80997496843338,protein coding
+FCGR3A+ Monocytes,45,PDCD1,12.615593836857723,protein coding
+FCGR3A+ Monocytes,46,CA6,12.369749024722651,protein coding
+FCGR3A+ Monocytes,47,MLH1,12.222744369506836,protein coding
+FCGR3A+ Monocytes,48,PANK4,12.12371989872381,protein coding
+FCGR3A+ Monocytes,49,ZNF197,12.11079113483429,protein coding
+FCGR3A+ Monocytes,50,CLDND1,12.000728607177734,protein coding
+FCGR3A+ Monocytes,51,OXSR1,11.246559619903564,protein coding
+FCGR3A+ Monocytes,52,HAT1,10.996464023084352,protein coding
+FCGR3A+ Monocytes,53,COQ10B,10.956338080492886,protein coding
+FCGR3A+ Monocytes,54,PRKRA,10.737997887226252,protein coding
+FCGR3A+ Monocytes,55,TNFRSF14,10.630424828610868,protein coding
+FCGR3A+ Monocytes,56,EIF1B,10.150832462310792,protein coding
+FCGR3A+ Monocytes,57,MYLK,10.122407913208008,protein coding
+FCGR3A+ Monocytes,58,ATG7,10.070982326160777,protein coding
+FCGR3A+ Monocytes,59,SPSB1,9.791212662332757,protein coding
+FCGR3A+ Monocytes,60,GPD1L,9.775625705718994,protein coding
+FCGR3A+ Monocytes,61,CYP27A1,9.382463196049565,protein coding
+FCGR3A+ Monocytes,62,C1orf174,8.72608061699446,protein coding
+FCGR3A+ Monocytes,63,NDUFB3,8.570209689256622,protein coding
+FCGR3A+ Monocytes,64,RNF123,8.456621487935385,protein coding
+FCGR3A+ Monocytes,65,NIF3L1,8.427997469902039,protein coding
+FCGR3A+ Monocytes,66,PARK7,8.199019838941743,protein coding
+FCGR3A+ Monocytes,67,CLSTN1,8.191125699003198,protein coding
+FCGR3A+ Monocytes,68,PCCB,7.867847442626953,protein coding
+FCGR3A+ Monocytes,69,PCBP4,7.694341619809468,protein coding
+FCGR3A+ Monocytes,70,ICOS,7.501155998080205,protein coding
+FCGR3A+ Monocytes,71,ACTR8,7.466038703918457,protein coding
+FCGR3A+ Monocytes,72,PER3,7.4572680525460475,protein coding
+FCGR3A+ Monocytes,73,CAMTA1,7.303840716340264,protein coding
+FCGR3A+ Monocytes,74,RETSAT,7.252854480780661,protein coding
+FCGR3A+ Monocytes,75,SEC22A,7.2255204518636065,protein coding
+FCGR3A+ Monocytes,76,PLCH2,7.217203027502424,protein coding
+FCGR3A+ Monocytes,77,REV1,7.193012752891642,protein coding
+FCGR3A+ Monocytes,78,TSEN2,6.993907148187811,protein coding
+FCGR3A+ Monocytes,79,GPX1,6.959958715098245,protein coding
+FCGR3A+ Monocytes,80,PMS1,6.812296765915891,protein coding
+FCGR3A+ Monocytes,81,ZNF804A,6.757796198737864,protein coding
+FCGR3A+ Monocytes,82,SLC41A3,6.723512649536133,protein coding
+FCGR3A+ Monocytes,83,OXSM,6.720481890439987,protein coding
+FCGR3A+ Monocytes,84,CHPF,6.719261937671238,protein coding
+FCGR3A+ Monocytes,85,IFRD2,6.577854442596435,protein coding
+FCGR3A+ Monocytes,86,MITF,6.497681458791097,protein coding
+FCGR3A+ Monocytes,87,NDUFS1,6.496752547590356,protein coding
+FCGR3A+ Monocytes,88,RPN1,6.469888895750046,protein coding
+FCGR3A+ Monocytes,89,SH3BGRL3,6.466530455313517,protein coding
+FCGR3A+ Monocytes,90,ANKRD28,6.457550776004791,protein coding
+FCGR3A+ Monocytes,91,ZNF654,6.386838595072429,protein coding
+FCGR3A+ Monocytes,92,GMPPA,6.380319104953245,protein coding
+FCGR3A+ Monocytes,93,OSGEPL1,6.3283816029628115,protein coding
+FCGR3A+ Monocytes,94,UBE2E3,6.185363874435425,protein coding
+FCGR3A+ Monocytes,95,SATB1,6.156736814975739,protein coding
+FCGR3A+ Monocytes,96,GTPBP8,6.1124482949574785,protein coding
+FCGR3A+ Monocytes,97,HMGN2,6.0617981080995325,protein coding
+FCGR3A+ Monocytes,98,WDR3,6.051955910829397,protein coding
+FCGR3A+ Monocytes,99,PLCL1,5.868981638415293,protein coding
+FCGR3A+ Monocytes,100,VPS72,5.793251347725405,protein coding
+Megakaryocytes,1,TMEM156,86.03986358642578,protein coding
+Megakaryocytes,2,NDUFC1,64.52239990234375,protein coding
+Megakaryocytes,3,ALPK1,61.82980728149414,protein coding
+Megakaryocytes,4,TSPAN5,60.591060638427734,protein coding
+Megakaryocytes,5,TMEM165,53.033607482910156,protein coding
+Megakaryocytes,6,SPRY1,47.587425231933594,protein coding
+Megakaryocytes,7,ANXA5,44.718162536621094,protein coding
+Megakaryocytes,8,USP53,40.97892761230469,protein coding
+Megakaryocytes,9,COPS4,39.88739013671875,protein coding
+Megakaryocytes,10,MED28,39.69944381713867,protein coding
+Megakaryocytes,11,TLR6,39.067344188690186,protein coding
+Megakaryocytes,12,LIAS,38.109466552734375,protein coding
+Megakaryocytes,13,MCCC1,37.59746265411377,protein coding
+Megakaryocytes,14,GPR171,36.51928464571635,protein coding
+Megakaryocytes,15,PF4,36.091243743896484,protein coding
+Megakaryocytes,16,DCUN1D1,35.700355052948,protein coding
+Megakaryocytes,17,PARL,35.53168320655823,protein coding
+Megakaryocytes,18,ARHGAP24,33.347530364990234,protein coding
+Megakaryocytes,19,PLAC8,33.12708282470703,protein coding
+Megakaryocytes,20,BANK1,33.021217346191406,protein coding
+Megakaryocytes,21,TXK,30.221939086914062,protein coding
+Megakaryocytes,22,NFKB1,30.185945510864258,protein coding
+Megakaryocytes,23,NDUFB5,29.339274406433105,protein coding
+Megakaryocytes,24,MGST2,27.76045799255371,protein coding
+Megakaryocytes,25,EIF5A2,27.53646683692932,protein coding
+Megakaryocytes,26,MTHFD2L,27.267545700073242,protein coding
+Megakaryocytes,27,TMEM33,26.333816528320312,protein coding
+Megakaryocytes,28,LRCH3,25.94508171081543,protein coding
+Megakaryocytes,29,BST1,25.92596745491028,protein coding
+Megakaryocytes,30,SLC30A9,25.925010681152344,protein coding
+Megakaryocytes,31,CD38,25.861949920654297,protein coding
+Megakaryocytes,32,CYTL1,25.34756988286972,protein coding
+Megakaryocytes,33,MRFAP1L1,24.343246698379517,protein coding
+Megakaryocytes,34,CLDND1,23.971048446801994,protein coding
+Megakaryocytes,35,MRPL3,23.386564413706463,protein coding
+Megakaryocytes,36,FAIM,23.33456814289093,protein coding
+Megakaryocytes,37,BDH1,23.016239047050476,protein coding
+Megakaryocytes,38,TBCCD1,22.84791660308838,protein coding
+Megakaryocytes,39,MAML3,22.4104061126709,protein coding
+Megakaryocytes,40,USP13,22.17142988741398,protein coding
+Megakaryocytes,41,DCK,22.16147232055664,protein coding
+Megakaryocytes,42,PODXL2,21.673478039828215,protein coding
+Megakaryocytes,43,SLBP,20.995413541793823,protein coding
+Megakaryocytes,44,MYL5,20.679463386535645,protein coding
+Megakaryocytes,45,ZNF141,20.3962721824646,protein coding
+Megakaryocytes,46,SIAH2,20.254660377899807,protein coding
+Megakaryocytes,47,CEP70,19.454727590084076,protein coding
+Megakaryocytes,48,GBE1,18.21879346554096,protein coding
+Megakaryocytes,49,CSTA,18.082121545618232,protein coding
+Megakaryocytes,50,DNAJC13,17.168879720899795,protein coding
+Megakaryocytes,51,GSK3B,16.559665481249493,protein coding
+Megakaryocytes,52,ANKRD17,16.308982849121094,protein coding
+Megakaryocytes,53,TRAT1,16.153219796144047,protein coding
+Megakaryocytes,54,GCC2,15.520215116228377,protein coding
+Megakaryocytes,55,GSTCD,15.188756942749023,protein coding
+Megakaryocytes,56,PFN2,15.121187107903618,protein coding
+Megakaryocytes,57,CACNA2D3,14.965507213885967,protein coding
+Megakaryocytes,58,TTN,14.948683277324394,protein coding
+Megakaryocytes,59,RNPEPL1,14.815216768871654,protein coding
+Megakaryocytes,60,PMS1,14.630867004394531,protein coding
+Megakaryocytes,61,MAGEF1,14.609496116638184,protein coding
+Megakaryocytes,62,ANKRD28,14.574267160892486,protein coding
+Megakaryocytes,63,LRPAP1,14.276836395263672,protein coding
+Megakaryocytes,64,TACC3,14.27674388885498,protein coding
+Megakaryocytes,65,IARS2,14.058482542886573,protein coding
+Megakaryocytes,66,CD96,13.776670063917454,protein coding
+Megakaryocytes,67,CXCL3,13.473649024963379,protein coding
+Megakaryocytes,68,RPN1,13.275195815346457,protein coding
+Megakaryocytes,69,PSMD6,13.191265133711008,protein coding
+Megakaryocytes,70,TLR2,13.09381103515625,protein coding
+Megakaryocytes,71,NR1D2,13.010859374937258,protein coding
+Megakaryocytes,72,CTDSP1,12.657083234786988,protein coding
+Megakaryocytes,73,CISH,12.547927618026733,protein coding
+Megakaryocytes,74,TMEM131,12.507389090000055,protein coding
+Megakaryocytes,75,SLC25A20,12.31839004684897,protein coding
+Megakaryocytes,76,PANK4,11.916899062015794,protein coding
+Megakaryocytes,77,LBR,11.770668267405458,protein coding
+Megakaryocytes,78,EYA3,11.15609673647718,protein coding
+Megakaryocytes,79,UNC50,11.115512143342922,protein coding
+Megakaryocytes,80,MAP3K2,10.834078383166343,protein coding
+Megakaryocytes,81,CHST2,10.719906159809657,protein coding
+Megakaryocytes,82,PHGDH,10.523701329769073,protein coding
+Megakaryocytes,83,ZNF804A,10.244089830804754,protein coding
+Megakaryocytes,84,CAMK1,10.221683210134506,protein coding
+Megakaryocytes,85,SLAMF7,10.212472140980072,protein coding
+Megakaryocytes,86,IGF2BP2,10.19476318359375,protein coding
+Megakaryocytes,87,RNASEL,10.15554174914289,protein coding
+Megakaryocytes,88,LRRC47,10.126667950641025,protein coding
+Megakaryocytes,89,UGDH,9.943203926086426,protein coding
+Megakaryocytes,90,ACVR1,9.819889768213034,protein coding
+Megakaryocytes,91,SCN9A,9.734961735791174,protein coding
+Megakaryocytes,92,ZNF692,9.420279878836412,protein coding
+Megakaryocytes,93,RAF1,9.215695297718048,protein coding
+Megakaryocytes,94,WNT7A,9.209352004528046,protein coding
+Megakaryocytes,95,SMYD3,9.186437988510498,protein coding
+Megakaryocytes,96,HPSE,9.145085334777832,protein coding
+Megakaryocytes,97,ABL2,9.094988322257995,protein coding
+Megakaryocytes,98,SRPRB,8.994661331176758,protein coding
+Megakaryocytes,99,MAP3K6,8.979515090584755,protein coding
+Megakaryocytes,100,DDX1,8.956524228453636,protein coding
+NK cells,1,DGKD,77.26502990722656,protein coding
+NK cells,2,TRIP12,48.86521911621094,protein coding
+NK cells,3,TMEM40,47.58812713623047,protein coding
+NK cells,4,CRELD1,45.56093215942383,protein coding
+NK cells,5,ATG7,40.978389739990234,protein coding
+NK cells,6,ATG16L1,39.038063049316406,protein coding
+NK cells,7,GTF3C3,35.80221161842346,protein coding
+NK cells,8,CAMK1,35.49851608276367,protein coding
+NK cells,9,BCS1L,34.24497711658478,protein coding
+NK cells,10,PDCD1,33.02073669433594,protein coding
+NK cells,11,BRPF1,30.18874740600586,protein coding
+NK cells,12,WNT7A,27.76077651977539,protein coding
+NK cells,13,LSM3,27.363134384155273,protein coding
+NK cells,14,ATIC,25.224685033162434,protein coding
+NK cells,15,NDUFS1,23.865588903427124,protein coding
+NK cells,16,CYP27A1,22.7294340133667,protein coding
+NK cells,17,TMEM43,22.410043716430664,protein coding
+NK cells,18,PDK1,20.6245174407959,protein coding
+NK cells,19,PANK4,19.729981608672528,protein coding
+NK cells,20,STK16,19.091007232666016,protein coding
+NK cells,21,COQ10B,18.917393493652344,protein coding
+NK cells,22,MPHOSPH10,18.40507847922189,protein coding
+NK cells,23,HAT1,17.56752041407994,protein coding
+NK cells,24,SMARCAL1,16.094181060791016,protein coding
+NK cells,25,VHL,15.188735008239746,protein coding
+NK cells,26,SCN9A,15.146558078852566,protein coding
+NK cells,27,TNFRSF14,15.116924895499416,protein coding
+NK cells,28,CLASP1,15.008099453789848,protein coding
+NK cells,29,PLCH2,14.78581791868356,protein coding
+NK cells,30,CLK1,14.523556327819824,protein coding
+NK cells,31,ICOS,14.334154844284058,protein coding
+NK cells,32,PROC,14.247233322688512,protein coding
+NK cells,33,STK39,14.099947051568465,protein coding
+NK cells,34,TTN,13.53267456293106,protein coding
+NK cells,35,COPS7B,13.473458290100098,protein coding
+NK cells,36,LIPT1,13.286796241998672,protein coding
+NK cells,37,CTDSP1,12.739908218383789,protein coding
+NK cells,38,ITM2C,12.310196876525879,protein coding
+NK cells,39,DDX1,11.52394478056166,protein coding
+NK cells,40,MRPL33,11.484717554516262,protein coding
+NK cells,41,MRPL35,11.267520866895977,protein coding
+NK cells,42,SCRN3,11.000240643819174,protein coding
+NK cells,43,LBH,10.923994049881443,protein coding
+NK cells,44,GCA,10.724090055985885,protein coding
+NK cells,45,MGAT4A,10.40491896867752,protein coding
+NK cells,46,ZNF669,10.188882027902912,protein coding
+NK cells,47,E2F6,9.964885852907015,protein coding
+NK cells,48,SNX17,9.60583901252502,protein coding
+NK cells,49,DNAJC11,9.20158596268368,protein coding
+NK cells,50,RBBP5,8.843379848785982,protein coding
+NK cells,51,MEIS1,8.639635880788168,protein coding
+NK cells,52,HAAO,8.626016789469226,protein coding
+NK cells,53,DHX57,8.448137799898783,protein coding
+NK cells,54,ZBTB48,8.423915946509696,protein coding
+NK cells,55,FARP2,8.382779121398926,protein coding
+NK cells,56,DUSP11,8.356638330221177,protein coding
+NK cells,57,CD8A,8.282438289178046,protein coding
+NK cells,58,LRRC47,8.12154242115939,protein coding
+NK cells,59,NMI,8.034208100575666,protein coding
+NK cells,60,B3GNT2,7.9997884172659655,protein coding
+NK cells,61,NOL9,7.952423019795241,protein coding
+NK cells,62,ZNF692,7.95017778065245,protein coding
+NK cells,63,ARHGEF10L,7.893757792870377,protein coding
+NK cells,64,WDR12,7.81258624792099,protein coding
+NK cells,65,ACVR1,7.760799751831935,protein coding
+NK cells,66,CDA,7.733439974829196,protein coding
+NK cells,67,NFU1,7.657557108185508,protein coding
+NK cells,68,KLHL21,7.6541386015827335,protein coding
+NK cells,69,ACADM,7.300647941098041,protein coding
+NK cells,70,LAX1,7.251366013119407,protein coding
+NK cells,71,PIGK,7.212998884022888,protein coding
+NK cells,72,ATG9A,7.207548022270203,protein coding
+NK cells,73,QPCT,7.133007216453552,protein coding
+NK cells,74,ACTR1B,7.0432960987091064,protein coding
+NK cells,75,PTPN4,6.919926929473877,protein coding
+NK cells,76,JAK1,6.872265972832882,protein coding
+NK cells,77,FHL2,6.852886073291302,protein coding
+NK cells,78,PLEKHM2,6.85013079323706,protein coding
+NK cells,79,CEBPZ,6.792569204684226,protein coding
+NK cells,80,POMGNT1,6.669377111713657,protein coding
+NK cells,81,PSMD14,6.475903302431107,protein coding
+NK cells,82,SLC35F5,6.451208114624023,protein coding
+NK cells,83,ASXL2,6.3856584589655805,protein coding
+NK cells,84,PADI2,6.3783972341591735,protein coding
+NK cells,85,BARD1,6.333218932151794,protein coding
+NK cells,86,NECAP2,6.134668580682325,protein coding
+NK cells,87,GYPC,6.03326267855508,protein coding
+NK cells,88,CHPF,5.834646701812744,protein coding
+NK cells,89,MSH2,5.818189990931544,protein coding
+NK cells,90,TSEN2,5.674051284790039,protein coding
+NK cells,91,MBD5,5.656021347412696,protein coding
+NK cells,92,HP1BP3,5.5968162940419734,protein coding
+NK cells,93,ATP13A2,5.580563516924626,protein coding
+NK cells,94,CSRP1,5.534409951773428,protein coding
+NK cells,95,LAPTM4A,5.503650557994843,protein coding
+NK cells,96,AUP1,5.360554808064511,protein coding
+NK cells,97,MAL,5.323084248436822,protein coding
+NK cells,98,SMYD3,5.3210201913660224,protein coding
+NK cells,99,PCYOX1,5.295093558051369,protein coding
+NK cells,100,NIF3L1,5.264986801147461,protein coding
+Other,1,ANAPC10,98.58186340332031,protein coding
+Other,2,DAPP1,90.063232421875,protein coding
+Other,3,MCCC1,79.42610168457031,protein coding
+Other,4,EREG,77.2645492553711,protein coding
+Other,5,ATP11B,68.73568725585938,protein coding
+Other,6,KLHL2,64.52142333984375,protein coding
+Other,7,SPRY1,61.829769134521484,protein coding
+Other,8,MAP9,59.15335464477539,protein coding
+Other,9,SLC2A9,56.987998962402344,protein coding
+Other,10,SRPRB,55.917253494262695,protein coding
+Other,11,SPINK2,53.03322219848633,protein coding
+Other,12,CPOX,51.104138692220054,protein coding
+Other,13,MYL5,50.25104522705078,protein coding
+Other,14,EXOSC9,49.526031494140625,protein coding
+Other,15,FIP1L1,48.864891052246094,protein coding
+Other,16,TBCCD1,48.1769905090332,protein coding
+Other,17,PDGFC,47.58799743652344,protein coding
+Other,18,PTX3,45.27869415283203,protein coding
+Other,19,SLC30A9,45.22117614746094,protein coding
+Other,20,FBXW7,44.7175178527832,protein coding
+Other,21,SEC24B,44.662933349609375,protein coding
+Other,22,MYLK,43.82010364532471,protein coding
+Other,23,PLAC8,43.46834182739258,protein coding
+Other,24,ASTE1,42.98470878601074,protein coding
+Other,25,CTSO,42.94945526123047,protein coding
+Other,26,NDUFC1,40.978355407714844,protein coding
+Other,27,MTHFD2L,39.03799819946289,protein coding
+Other,28,ACTL6A,38.14881134033203,protein coding
+Other,29,LIAS,38.108917236328125,protein coding
+Other,30,RFC4,37.26316833496094,protein coding
+Other,31,LRCH3,37.06584548950195,protein coding
+Other,32,ANKRD17,36.09042739868164,protein coding
+Other,33,USP53,35.4983024597168,protein coding
+Other,34,ALG3,35.15702819824219,protein coding
+Other,35,MRPS18C,33.34755325317383,protein coding
+Other,36,COPS4,33.12644577026367,protein coding
+Other,37,SLC41A3,33.030548095703125,protein coding
+Other,38,DNAJB14,33.02045822143555,protein coding
+Other,39,GSTCD,30.185195922851562,protein coding
+Other,40,CD38,30.090845108032227,protein coding
+Other,41,TMEM39A,29.38653564453125,protein coding
+Other,42,CCNL1,29.296476364135742,protein coding
+Other,43,PSMD2,29.18561553955078,protein coding
+Other,44,DBR1,28.281484603881836,protein coding
+Other,45,CEP70,27.547903537750244,protein coding
+Other,46,TRIP13,27.3632869720459,protein coding
+Other,47,MFSD1,27.235916137695312,protein coding
+Other,48,NDUFB5,26.954614639282227,protein coding
+Other,49,PDCD10,26.639986038208008,protein coding
+Other,50,GUF1,26.333086013793945,protein coding
+Other,51,COMMD8,25.924270629882812,protein coding
+Other,52,SSR3,25.63998794555664,protein coding
+Other,53,GNAI2,25.47193994787004,protein coding
+Other,54,POLR2H,24.59954833984375,protein coding
+Other,55,NME6,21.869000011020237,protein coding
+Other,56,PFN2,21.539751052856445,protein coding
+Other,57,AZI2,21.308963119983673,protein coding
+Other,58,PARP3,19.581588455608912,protein coding
+Other,59,ZNF197,19.53181881904602,protein coding
+Other,60,ABHD10,19.087906301021576,protein coding
+Other,61,FHIT,18.57692289352417,protein coding
+Other,62,EIF5A2,18.51936912536621,protein coding
+Other,63,TXK,17.605487823486328,protein coding
+Other,64,P2RY13,17.198894500732422,protein coding
+Other,65,RNF4,17.17208480834961,protein coding
+Other,66,HCLS1,16.97907829284668,protein coding
+Other,67,SULT1B1,16.30834197998047,protein coding
+Other,68,EAF2,16.278770208358765,protein coding
+Other,69,NMD3,16.258068084716797,protein coding
+Other,70,PCNP,16.071349779764812,protein coding
+Other,71,TBL1XR1,16.042335510253906,protein coding
+Other,72,CLDND1,15.938074827194214,protein coding
+Other,73,DNAJC13,15.635402500629425,protein coding
+Other,74,QDPR,15.591878890991211,protein coding
+Other,75,RPN1,15.390652179718018,protein coding
+Other,76,GTPBP8,15.339151859283447,protein coding
+Other,77,TNIP3,15.188509941101074,protein coding
+Other,78,STK16,14.95239889912489,protein coding
+Other,79,RASA2,14.69633960723877,protein coding
+Other,80,RBM6,14.530506875779894,protein coding
+Other,81,HLTF,14.018183708190918,protein coding
+Other,82,CXCL3,13.474254608154297,protein coding
+Other,83,PDE6B,13.364657402038574,protein coding
+Other,84,DPPA4,13.338191350301107,protein coding
+Other,85,TRIP12,13.1413343725726,protein coding
+Other,86,NDUFS6,13.09346866607666,protein coding
+Other,87,FBLN2,12.93688377737999,protein coding
+Other,88,RSRC1,12.817888259887695,protein coding
+Other,89,VPS8,12.674223899841309,protein coding
+Other,90,MRPS22,12.61204195022583,protein coding
+Other,91,TMEM165,12.403724670410156,protein coding
+Other,92,HSPBAP1,12.375426292419434,protein coding
+Other,93,DCK,12.309842109680176,protein coding
+Other,94,BRPF1,12.191613058249155,protein coding
+Other,95,RASSF1,12.177054299248589,protein coding
+Other,96,PANK4,12.006905605674563,protein coding
+Other,97,S100P,11.89787769317627,protein coding
+Other,98,MED28,11.69479751586914,protein coding
+Other,99,ZBTB11,11.6544558207194,protein coding
+Other,100,OXSR1,11.511178753592752,protein coding

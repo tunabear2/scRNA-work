@@ -1,0 +1,25 @@
+{
+  "task": "06_multiclass_gene_function",
+  "dataset": "GO_data (MF/CC/BP top10)",
+  "results": {
+    "MF": {
+      "AUPR": 0.7530088524643128,
+      "Fmax": 0.8066253827205967,
+      "best_epoch": 3,
+      "checkpoint": "/home/tunabear2/DW/scFM/checkpoint/GeneFunction/MF_top10_best.pth"
+    },
+    "CC": {
+      "AUPR": 0.8813739505117268,
+      "Fmax": 0.6419142004137606,
+      "best_epoch": 4,
+      "checkpoint": "/home/tunabear2/DW/scFM/checkpoint/GeneFunction/CC_top10_best.pth"
+    },
+    "BP": {
+      "AUPR": 0.5609869850341848,
+      "Fmax": 0.6883662429326788,
+      "best_epoch": 2,
+      "checkpoint": "/home/tunabear2/DW/scFM/checkpoint/GeneFunction/BP_top10_best.pth"
+    }
+  },
+  "timestamp": "2026-04-10T19:02:41.791658"
+}

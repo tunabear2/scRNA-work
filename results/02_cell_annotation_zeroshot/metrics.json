@@ -1,0 +1,8 @@
+{
+  "task": "02_cell_annotation_zeroshot",
+  "dataset": "hPancreas",
+  "epochs": 30,
+  "best_acc": 0.47676623992413464,
+  "timestamp": "2026-04-10T18:41:00.081793",
+  "checkpoint": "/home/tunabear2/DW/scFM/checkpoint/CellAnnotation/hPancreas_zeroshot_best.pth"
+}
