@@ -326,8 +326,6 @@ def main():
 
     logger.info(f"전체 결과: {all_results}")
 
-    save_figures(all_results)
-
     # metrics에서 내부 PR curve 배열은 제외
     metrics_clean = {}
     for task, res in all_results.items():
@@ -341,6 +339,11 @@ def main():
     }
     path = save_metrics(metrics, RESULTS)
     logger.info(f"결과 저장: {path}")
+
+    try:
+        save_figures(all_results)
+    except Exception as e:
+        logger.error(f"Figure 생성 실패 (metrics는 이미 저장됨): {e}")
 
 
 if __name__ == "__main__":
