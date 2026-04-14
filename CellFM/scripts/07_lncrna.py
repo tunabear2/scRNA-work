@@ -316,9 +316,6 @@ def main():
     df_out.to_csv(csv_path, index=False)
     logger.info(f"lncRNA 결과 저장: {csv_path}")
 
-    # Figure 생성
-    save_figures(attention, all_cls_tokens, all_labels, dataset.id2type, feature_map)
-
     metrics = {
         "task":      TASK,
         "dataset":   "PBMC_10K",
@@ -330,6 +327,12 @@ def main():
     }
     path = save_metrics(metrics, RESULTS)
     logger.info(f"결과 저장: {path}")
+
+    # Figure 생성
+    try:
+        save_figures(attention, all_cls_tokens, all_labels, dataset.id2type, feature_map)
+    except Exception as e:
+        logger.error(f"Figure 생성 실패 (metrics는 이미 저장됨): {e}")
 
 
 if __name__ == "__main__":
