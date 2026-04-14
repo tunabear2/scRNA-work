@@ -65,42 +65,45 @@ def prepare_gears_data(data_dir):
     return dst_dir
 
 
-def save_figures(test_res, gene_names=None):
-    """예측 발현값 scatter plot 및 Pearson bar chart 저장."""
+def save_figures(test_res, test_pert_res, gene_names=None):
+    """예측 발현값 scatter plot 및 Pearson bar chart 저장.
+
+    test_res 포맷 (GEARS evaluate() 출력):
+        {"pert_cat": ndarray(N,), "pred": ndarray(N, G), "truth": ndarray(N, G), ...}
+    test_pert_res 포맷 (compute_metrics() 출력):
+        {condition: {"pearson": float, "mse": float, ...}, ...}
+    """
     logger.info("Figure 생성 시작...")
 
     # ── 예측 발현값 수집 (perturbation별 평균) ────────────────────
+    pert_cat = np.array(test_res.get("pert_cat", []))
+    pred_all = np.array(test_res.get("pred",  []))
+    truth_all= np.array(test_res.get("truth", []))
+
+    if pred_all.ndim < 2 or len(pert_cat) == 0:
+        logger.warning("예측 발현값이 비어있어 figure를 생성하지 않습니다.")
+        return
+
     rows = []
     pred_means, truth_means, cond_labels = [], [], []
 
-    for cond, vals in test_res.items():
-        try:
-            pred  = np.array(vals.get("pred",  vals.get("pred_de",  [])))
-            truth = np.array(vals.get("truth", vals.get("truth_de", [])))
-            if pred.ndim == 0 or truth.ndim == 0:
-                continue
-            if pred.ndim == 1:
-                pred  = pred.reshape(1, -1)
-                truth = truth.reshape(1, -1)
-            pm = pred.mean(axis=0)
-            tm = truth.mean(axis=0)
-            pred_means.append(pm)
-            truth_means.append(tm)
-            cond_labels.append(str(cond))
-            for g_idx, (p, t) in enumerate(zip(pm, tm)):
-                rows.append({
-                    "condition": str(cond),
-                    "gene_idx":  g_idx,
-                    "gene":      gene_names[g_idx] if gene_names and g_idx < len(gene_names) else str(g_idx),
-                    "pred_mean": float(p),
-                    "truth_mean":float(t),
-                })
-        except Exception:
-            continue
-
-    if not rows:
-        logger.warning("예측 발현값이 비어있어 figure를 생성하지 않습니다.")
-        return
+    for cond in np.unique(pert_cat):
+        mask  = pert_cat == cond
+        pred  = pred_all[mask]
+        truth = truth_all[mask]
+        pm = pred.mean(axis=0)
+        tm = truth.mean(axis=0)
+        pred_means.append(pm)
+        truth_means.append(tm)
+        cond_labels.append(str(cond))
+        for g_idx, (p, t) in enumerate(zip(pm, tm)):
+            rows.append({
+                "condition":  str(cond),
+                "gene_idx":   g_idx,
+                "gene":       gene_names[g_idx] if gene_names and g_idx < len(gene_names) else str(g_idx),
+                "pred_mean":  float(p),
+                "truth_mean": float(t),
+            })
 
     # 예측 발현값 CSV 저장
     df_pred = pd.DataFrame(rows)
@@ -131,13 +134,20 @@ def save_figures(test_res, gene_names=None):
     logger.info("scatter_pred_vs_truth.png 저장")
 
     # ── 2. Pearson per perturbation (상위 30개) ───────────────────
+    # test_pert_res에 per-condition pearson이 이미 계산돼 있으면 그것을 우선 사용
     pearson_list = []
-    for pm, tm, cond in zip(pred_means, truth_means, cond_labels):
-        if len(pm) < 2:
-            continue
-        r = np.corrcoef(tm, pm)[0, 1]
-        if not np.isnan(r):
-            pearson_list.append((cond, r))
+    if test_pert_res:
+        for cond, metrics in test_pert_res.items():
+            r = metrics.get("pearson", float("nan"))
+            if not np.isnan(r):
+                pearson_list.append((str(cond), r))
+    if not pearson_list:
+        for pm, tm, cond in zip(pred_means, truth_means, cond_labels):
+            if len(pm) < 2:
+                continue
+            r = np.corrcoef(tm, pm)[0, 1]
+            if not np.isnan(r):
+                pearson_list.append((cond, r))
 
     if pearson_list:
         pearson_list.sort(key=lambda x: x[1], reverse=True)
@@ -212,7 +222,7 @@ def main():
     gene_names = list(pert_data.gene_names) if hasattr(pert_data, "gene_names") else None
 
     # Figure 저장
-    save_figures(test_res, gene_names)
+    save_figures(test_res, test_pert_res, gene_names)
 
     metrics = {
         "task":       TASK,
