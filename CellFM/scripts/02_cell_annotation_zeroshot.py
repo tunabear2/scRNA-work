@@ -162,12 +162,22 @@ def save_figures(net, test_loader, id2label, train_losses, test_accs):
 
     # ── 3. Confusion matrix ────────────────────────────────────────
     label_names = [id2label[i] for i in sorted(id2label)]
-    cm  = confusion_matrix(all_labels, all_preds)
+    cm  = confusion_matrix(all_labels, all_preds, labels=list(range(len(label_names))))
     n   = len(label_names)
     fig, ax = plt.subplots(figsize=(max(6, n), max(5, n - 1)))
-    disp = ConfusionMatrixDisplay(cm, display_labels=label_names)
-    disp.plot(ax=ax, xticks_rotation=45, colorbar=False)
+    im = ax.imshow(cm, interpolation="nearest", cmap=plt.cm.Blues)
+    plt.colorbar(im, ax=ax)
+    ax.set_xticks(np.arange(n)); ax.set_yticks(np.arange(n))
+    ax.set_xticklabels(label_names, rotation=45, ha="right", fontsize=max(4, 9 - n // 3))
+    ax.set_yticklabels(label_names, fontsize=max(4, 9 - n // 3))
+    ax.set_xlabel("Predicted label"); ax.set_ylabel("True label")
     ax.set_title("Confusion Matrix (Test Set, Zero-shot)")
+    thresh = cm.max() / 2.0
+    for i in range(n):
+        for j in range(n):
+            ax.text(j, i, str(cm[i, j]), ha="center", va="center",
+                    color="white" if cm[i, j] > thresh else "black",
+                    fontsize=max(4, 8 - n // 3))
     plt.tight_layout()
     fig.savefig(os.path.join(FIG_DIR, "confusion_matrix.png"), dpi=150, bbox_inches="tight")
     plt.close()
@@ -269,10 +279,7 @@ def main():
             torch.save(net.state_dict(), best_path)
             logger.info(f"  ▶ 베스트 저장 acc={best_acc:.4f}")
 
-    # 베스트 모델 로드 후 figure 생성
-    net.load_state_dict(torch.load(best_path))
-    save_figures(net, test_loader, id2label, train_losses, test_accs)
-
+    # 메트릭 먼저 저장 (figure 생성 실패해도 보존)
     metrics = {
         "task":         TASK,
         "dataset":      "hPancreas",
@@ -285,6 +292,13 @@ def main():
     }
     path = save_metrics(metrics, RESULTS)
     logger.info(f"결과 저장: {path}")
+
+    # 베스트 모델 로드 후 figure 생성
+    net.load_state_dict(torch.load(best_path))
+    try:
+        save_figures(net, test_loader, id2label, train_losses, test_accs)
+    except Exception as e:
+        logger.error(f"Figure 생성 실패 (metrics는 이미 저장됨): {e}")
 
 
 if __name__ == "__main__":
